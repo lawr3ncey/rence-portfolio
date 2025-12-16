@@ -167,7 +167,7 @@ const Aboutme: React.FC = () => {
 
             {/* Image 4 - Small floating card (bottom middle) */}
             <div 
-              className={`absolute bottom-[10%] left-[51%] w-[55%] h-[42%] transition-all duration-1000 ease-out
+              className={`absolute bottom-[10%] left-[51%] lg:w-[55%] w-[46%] h-[42%] transition-all duration-1000 ease-out
                 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}
                 hover:scale-110 hover:rotate-3 hover:shadow-2xl hover:z-30`}
               style={{ transitionDelay: '700ms' }}
