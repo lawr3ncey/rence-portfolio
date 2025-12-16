@@ -39,17 +39,17 @@ const Navbar: React.FC = () => {
           aria-expanded={isMenuOpen}
         >
           <span 
-            className={`block h-0.5 bg-gray-900 transition-all duration-300 ${
+            className={`block w-full h-0.5 bg-gray-900 transition-all duration-300 ${
               isMenuOpen ? 'rotate-45 translate-y-2' : ''
             }`}
           ></span>
           <span 
-            className={`block h-0.5 bg-gray-900 transition-all duration-300 ${
+            className={`block w-full h-0.5 bg-gray-900 transition-all duration-300 ${
               isMenuOpen ? 'opacity-0' : ''
             }`}
           ></span>
           <span 
-            className={`block h-0.5 bg-gray-900 transition-all duration-300 ${
+            className={`block w-full h-0.5 bg-gray-900 transition-all duration-300 ${
               isMenuOpen ? '-rotate-45 -translate-y-2' : ''
             }`}
           ></span>
