@@ -2,11 +2,11 @@ import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const ProfileCard = () => {
   return (
-    <div className="bg-white shadow-lg rounded-md p-6 w-[22rem] text-center">
+    <div className="bg-white shadow-lg rounded-md p-6 w-full max-w-[22rem] text-center">
       <img
-        src="../images/profile.jpg"
+        src="/images/profile.jpg"
         alt="profile"
-        className="w-[196px] h-[196px] rounded-full mx-auto mb-[2rem]"
+        className="w-32 h-32 sm:w-40 sm:h-40 md:w-[196px] md:h-[196px] rounded-full mx-auto mb-6 md:mb-[2rem]"
       />
 
       <h2 className="font-bold text-2xl">Lawrence Babelonia</h2>
