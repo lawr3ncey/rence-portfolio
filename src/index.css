@@ -2,4 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset for fixed navbar when scrolling to sections */
+section {
+  scroll-margin-top: 80px;
+}
+
 

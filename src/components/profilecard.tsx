@@ -1,6 +1,7 @@
-import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa";
+import React from 'react';
+import { FaGithub, FaFacebookF, FaInstagram } from "react-icons/fa";
 
-const ProfileCard = () => {
+const ProfileCard: React.FC = () => {
   return (
     <div className="bg-white shadow-lg rounded-md p-6 w-full max-w-[22rem] text-center">
       <img
@@ -12,28 +13,29 @@ const ProfileCard = () => {
       <h2 className="font-bold text-2xl">Lawrence Babelonia</h2>
       <p className="text-sm text-gray-500 mb-4">Software Developer</p>
 
-      <div className="w-10 h-1 bg-blue-500 mx-auto mb-4"></div>
+      <div className="w-10 h-1 bg-blue-500 mx-auto mb-[31px]"> </div>
 
-      <p className="text-xs text-gray-400 uppercase tracking-widest mb-[3rem]">
-        Developer Portfolio
+      <p className="text-xs text-gray-400 uppercase tracking-widest mb-[1rem]">
+        Socials
       </p>
 
       {/* Icon section */}
       <div className="flex justify-center gap-2">
         <a
-          href="https://linkedin.com"
+          href="https://github.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white transition"
+          className="text-[#4b5563] w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-black hover:text-white transition"
+          aria-label="GitHub"
         >
-          <FaLinkedinIn className="text-lg" />
+          <FaGithub />
         </a>
 
         <a
           href="https://facebook.com/yourprofile"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white transition"
+          className="text-[#4b5563] w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white transition"
         >
           <FaFacebookF className="text-lg" />
         </a>
@@ -43,6 +45,7 @@ const ProfileCard = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="
+          text-[#4b5563]
             group
             w-10 h-10
             flex items-center justify-center

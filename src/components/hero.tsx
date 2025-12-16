@@ -1,13 +1,14 @@
+import React from 'react';
 import ProfileCard from "./profilecard"
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
-    <section className="flex items-center min-h-[80vh] py-8 md:py-0">
+    <section className="py-16 md:py-24 px-4 sm:px-8 md:px-12 lg:px-24">
 
       {/* Beige background block - hidden on mobile, visible on larger screens */}
 
       {/* Content */}
-      <div className="flex flex-col md:flex-row items-center w-full gap-6 md:gap-[4%] justify-center px-4 sm:px-8 md:px-12">
+      <div className="flex flex-col md:flex-row items-center w-full gap-6 md:gap-[4%] justify-center sm:px-8 md:px-12">
 
         {/* Left - Profile Card */}
         <ProfileCard />
@@ -18,10 +19,10 @@ const Hero = () => {
           <p className="text-gray-600 mb-6 font-bold text-base sm:text-lg">Here's what I can do</p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 text-sm sm:text-base">
+            <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 text-sm sm:text-base font-semibold">
               My Resume
             </button>
-            <button className="border border-gray-400 px-6 py-2 rounded-full hover:bg-gray-100 text-sm sm:text-base">
+            <button className="border border-gray-400 px-6 py-2 rounded-full hover:bg-gray-100 text-sm font-semibold">
               My Portfolio
             </button>
           </div>
