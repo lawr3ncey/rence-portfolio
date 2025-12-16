@@ -3,11 +3,11 @@ import { FaGithub, FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const ProfileCard: React.FC = () => {
   return (
-    <div className="bg-white shadow-lg rounded-md p-6 w-full max-w-[22rem] text-center">
+    <div className="bg-white shadow-lg rounded-md px-[45px] py-2 w-full max-w-[22rem] text-center">
       <img
         src="/images/profile.jpg"
         alt="profile"
-        className="w-32 h-32 sm:w-40 sm:h-40 md:w-[196px] md:h-[196px] rounded-full mx-auto mb-6 md:mb-[2rem]"
+        className="w-32 h-32 sm:w-40 sm:h-40 md:w-[196px] md:h-[196px] rounded-full mx-auto mb-6 mt-6 md:mb-[2rem]"
       />
 
       <h2 className="font-bold text-2xl">Lawrence Babelonia</h2>
@@ -16,7 +16,7 @@ const ProfileCard: React.FC = () => {
       <div className="w-10 h-1 bg-blue-500 mx-auto mb-[31px]"> </div>
 
       <p className="text-xs text-gray-400 uppercase tracking-widest mb-[1rem]">
-        Socials
+        CONNECT WITH ME
       </p>
 
       {/* Icon section */}

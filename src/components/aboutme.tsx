@@ -2,7 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const Aboutme: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [contentVisible, setContentVisible] = useState(false);
+  const [blocksVisible, setBlocksVisible] = useState<Set<number>>(new Set());
   const imageContainerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const blockRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   // Intersection Observer for scroll-based animation trigger
   useEffect(() => {
@@ -27,6 +31,52 @@ const Aboutme: React.FC = () => {
     };
   }, []);
 
+  // Intersection Observer for content (header and description)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setContentVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    const currentContentRef = contentRef.current;
+    if (currentContentRef) {
+      observer.observe(currentContentRef);
+    }
+
+    return () => {
+      if (currentContentRef) {
+        observer.unobserve(currentContentRef);
+      }
+    };
+  }, []);
+
+  // Intersection Observer for numbered blocks
+  useEffect(() => {
+    const observers = blockRefs.current.map((block, index) => {
+      if (!block) return null;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setBlocksVisible((prev) => new Set(prev).add(index));
+          }
+        },
+        { threshold: 0.2 }
+      );
+
+      observer.observe(block);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer?.disconnect());
+    };
+  }, []);
+
   return (
     <section id="about" className="py-16 md:py-24 px-4 sm:px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
@@ -34,38 +84,50 @@ const Aboutme: React.FC = () => {
           
           {/* Left Column - Content */}
           <div>
+            <div 
+              ref={contentRef}
+              className={`transition-all duration-1000 ${
+                contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              {/* Section Heading */}
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                About Me
+              </h2>
 
-            {/* Section Heading */}
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              About Me
-            </h2>
-
-            {/* Reflection */}
-            <h2
-                className="
-                    text-4xl md:text-5xl font-bold
-                    transform scale-y-[-1]
-                    opacity-40
-                    bg-[linear-gradient(to_top,rgba(17,24,39,3)_0%,rgba(17,24,39,0.4)_40%,rgba(17,24,39,0.05)_70%,rgba(17,24,39,0)_100%)]
-                    bg-clip-text text-transparent
-                    pointer-events-none
-                "
-                >
-              About Me
-            </h2>
-            
-            {/* Description Paragraph */}
-            <p className="text-gray-600 leading-relaxed mb-12">
+              {/* Reflection */}
+              <h2
+                  className="
+                      text-4xl md:text-5xl font-bold
+                      transform scale-y-[-1]
+                      opacity-40
+                      bg-[linear-gradient(to_top,rgba(17,24,39,3)_0%,rgba(17,24,39,0.4)_40%,rgba(17,24,39,0.05)_70%,rgba(17,24,39,0)_100%)]
+                      bg-clip-text text-transparent
+                      pointer-events-none
+                  "
+                  >
+                About Me
+              </h2>
+              
+              {/* Description Paragraph */}
+              <p className="text-gray-600 leading-relaxed mb-12">
               I'm a passionate software developer with a focus on creating meaningful digital 
               experiences. With expertise in modern web technologies and a keen eye for design, 
               I transform ideas into functional, user-friendly applications.
-            </p>
+              </p>
+            </div>
 
             {/* Numbered Info Blocks - 2x2 Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               
               {/* Block 1 */}
-              <div className="space-y-2 bg-white shadow-lg rounded-md p-6">
+              <div 
+                ref={(el) => { blockRefs.current[0] = el; }}
+                className={`space-y-2 bg-white shadow-lg rounded-md p-6 transition-all duration-1000 ${
+                  blocksVisible.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: '100ms' }}
+              >
                 <div className="text-5xl font-bold text-blue-600">01</div>
                 <h3 className="text-xl font-semibold text-gray-900">
                   Clean Code
@@ -77,7 +139,13 @@ const Aboutme: React.FC = () => {
               </div>
 
               {/* Block 2 */}
-              <div className="space-y-2 bg-white shadow-lg rounded-md p-6">
+              <div 
+                ref={(el) => { blockRefs.current[1] = el; }}
+                className={`space-y-2 bg-white shadow-lg rounded-md p-6 transition-all duration-1000 ${
+                  blocksVisible.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: '200ms' }}
+              >
                 <div className="text-5xl font-bold text-blue-600">02</div>
                 <h3 className="text-xl font-semibold text-gray-900">
                   User-Focused
@@ -89,7 +157,13 @@ const Aboutme: React.FC = () => {
               </div>
 
               {/* Block 3 */}
-              <div className="space-y-2 bg-white shadow-lg rounded-md p-6">
+              <div 
+                ref={(el) => { blockRefs.current[2] = el; }}
+                className={`space-y-2 bg-white shadow-lg rounded-md p-6 transition-all duration-1000 ${
+                  blocksVisible.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: '300ms' }}
+              >
                 <div className="text-5xl font-bold text-blue-600">03</div>
                 <h3 className="text-xl font-semibold text-gray-900">
                   Responsive Design
@@ -101,7 +175,13 @@ const Aboutme: React.FC = () => {
               </div>
 
               {/* Block 4 */}
-              <div className="space-y-2 bg-white shadow-lg rounded-md p-6">
+              <div 
+                ref={(el) => { blockRefs.current[3] = el; }}
+                className={`space-y-2 bg-white shadow-lg rounded-md p-6 transition-all duration-1000 ${
+                  blocksVisible.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: '400ms' }}
+              >
                 <div className="text-5xl font-bold text-blue-600">04</div>
                 <h3 className="text-xl font-semibold text-gray-900">
                   Problem Solving

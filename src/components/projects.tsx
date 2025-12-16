@@ -140,7 +140,32 @@ const Projects: React.FC = () => {
 
   // Animation state and refs
   const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
+  const [headerVisible, setHeaderVisible] = useState(false);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  // Intersection Observer for header
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHeaderVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    const currentHeaderRef = headerRef.current;
+    if (currentHeaderRef) {
+      observer.observe(currentHeaderRef);
+    }
+
+    return () => {
+      if (currentHeaderRef) {
+        observer.unobserve(currentHeaderRef);
+      }
+    };
+  }, []);
 
   // Intersection Observer for scroll animations
   useEffect(() => {
@@ -168,23 +193,30 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-16 md:py-24 px-4 sm:px-8 md:px-12 lg:px-24 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Projects
-            </h2>
+            <div 
+              ref={headerRef}
+              className={`transition-all duration-1000 ${
+                headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                Projects
+              </h2>
 
-            {/* Reflection */}
-            <h2
-                className="
-                    text-4xl md:text-5xl font-bold
-                    transform scale-y-[-1]
-                    opacity-40
-                    bg-[linear-gradient(to_top,rgba(17,24,39,3)_0%,rgba(17,24,39,0.4)_40%,rgba(17,24,39,0.05)_70%,rgba(17,24,39,0)_100%)]
-                    bg-clip-text text-transparent
-                    pointer-events-none mb-12
-                "
-                >
-              Projects
-            </h2>
+              {/* Reflection */}
+              <h2
+                  className="
+                      text-4xl md:text-5xl font-bold
+                      transform scale-y-[-1]
+                      opacity-40
+                      bg-[linear-gradient(to_top,rgba(17,24,39,3)_0%,rgba(17,24,39,0.4)_40%,rgba(17,24,39,0.05)_70%,rgba(17,24,39,0)_100%)]
+                      bg-clip-text text-transparent
+                      pointer-events-none mb-12
+                  "
+                  >
+                Projects
+              </h2>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {projectsData.map((project, index) => (

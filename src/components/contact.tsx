@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaPhone, FaEnvelope, FaGlobe, FaMapMarkerAlt, FaLinkedinIn, FaGithub, FaFacebookF } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaGlobe, FaMapMarkerAlt, FaLinkedinIn, FaGithub, FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
@@ -162,6 +162,26 @@ const Contact: React.FC = () => {
                   >
                     <FaFacebookF />
                   </a>
+                  <a
+                            href="https://instagram.com/yourprofile"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="
+                            text-[#4b5563]
+                              group
+                              w-10 h-10
+                              flex items-center justify-center
+                              rounded-full
+                              bg-gray-100
+                              transition
+                              hover:bg-gradient-to-tr
+                              hover:from-yellow-400
+                              hover:via-pink-500
+                              hover:to-purple-600
+                            "
+                          >
+                            <FaInstagram className="text-lg group-hover:text-white transition" />
+                          </a>
                 </div>
               </div>
 
