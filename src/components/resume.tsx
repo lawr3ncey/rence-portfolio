@@ -1,12 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Resume: React.FC = () => {
+    const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+    const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+
+    useEffect(() => {
+        const observers = Object.entries(sectionRefs.current).map(([key, element]) => {
+            if (!element) return null;
+
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        setVisibleSections((prev) => new Set(prev).add(key));
+                    }
+                },
+                { threshold: 0.1 }
+            );
+
+            observer.observe(element);
+            return observer;
+        });
+
+        return () => {
+            observers.forEach((observer) => observer?.disconnect());
+        };
+    }, []);
+
     return (
         <section id="resume" className="bg-gray-50 py-16 md:py-24 px-4 sm:px-8 md:px-12 lg:px-24">
             <div className="max-w-7xl mx-auto">
                 
                 {/* Section Header */}
-                <div className="mb-12">
+                <div 
+                    ref={(el) => { sectionRefs.current['header'] = el; }}
+                    className={`mb-12 transition-all duration-1000 ${
+                        visibleSections.has('header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    }`}
+                >
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
                         Resume
                         </h2>
@@ -32,7 +62,12 @@ const Resume: React.FC = () => {
                 </div>
 
                 {/* Work Experience Section */}
-                <div className="mb-16">
+                <div 
+                    ref={(el) => { sectionRefs.current['work'] = el; }}
+                    className={`mb-16 transition-all duration-1000 delay-200 ${
+                        visibleSections.has('work') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    }`}
+                >
                     <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center">
                         <span className="w-2 h-8 bg-blue-600 mr-3"></span>
                         Work Experience
@@ -90,7 +125,12 @@ const Resume: React.FC = () => {
                 </div>
 
                 {/* Education Section */}
-                <div className="mb-16">
+                <div 
+                    ref={(el) => { sectionRefs.current['education'] = el; }}
+                    className={`mb-16 transition-all duration-1000 delay-400 ${
+                        visibleSections.has('education') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    }`}
+                >
                     <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center">
                         <span className="w-2 h-8 bg-blue-600 mr-3"></span>
                         Education
@@ -126,7 +166,12 @@ const Resume: React.FC = () => {
                 </div>
 
                 {/* Skills Section */}
-                <div>
+                <div 
+                    ref={(el) => { sectionRefs.current['skills'] = el; }}
+                    className={`transition-all duration-1000 delay-600 ${
+                        visibleSections.has('skills') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    }`}
+                >
                     <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center">
                         <span className="w-2 h-8 bg-blue-600 mr-3"></span>
                         Skills & Technologies

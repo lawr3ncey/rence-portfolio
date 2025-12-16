@@ -15,13 +15,14 @@ const Aboutme: React.FC = () => {
       { threshold: 0.2 } // Trigger when 20% of the section is visible
     );
 
-    if (imageContainerRef.current) {
-      observer.observe(imageContainerRef.current);
+    const currentRef = imageContainerRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (imageContainerRef.current) {
-        observer.unobserve(imageContainerRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

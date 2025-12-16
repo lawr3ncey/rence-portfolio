@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaPhone, FaEnvelope, FaGlobe, FaMapMarkerAlt, FaLinkedinIn, FaGithub, FaFacebookF } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+  const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+
+  useEffect(() => {
+    const observers = Object.entries(sectionRefs.current).map(([key, element]) => {
+      if (!element) return null;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set(prev).add(key));
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      observer.observe(element);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer) => observer?.disconnect());
+    };
+  }, []);
+
   return (
     <>
       {/* Contact Section */}
@@ -14,7 +39,12 @@ const Contact: React.FC = () => {
 
             {/* Right Column - Get in Touch */}
             <div>
-              <div className="mb-8">
+              <div 
+                ref={(el) => { sectionRefs.current['header'] = el; }}
+                className={`mb-8 transition-all duration-1000 ${
+                  visibleSections.has('header') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+              >
 
                 {/* Section Heading */}
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
@@ -43,7 +73,12 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Contact Info Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              <div 
+                ref={(el) => { sectionRefs.current['cards'] = el; }}
+                className={`grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8 transition-all duration-1000 delay-200 ${
+                  visibleSections.has('cards') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+              >
                 
                 {/* Phone */}
                 <div className="flex items-start space-x-3  bg-white shadow-lg rounded-md p-6">
@@ -92,7 +127,12 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Social Media */}
-              <div>
+              <div 
+                ref={(el) => { sectionRefs.current['social'] = el; }}
+                className={`transition-all duration-1000 delay-400 ${
+                  visibleSections.has('social') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+              >
                 <h4 className="text-sm font-semibold text-gray-900 mb-4">Follow Me On</h4>
                 <div className="flex space-x-3">
                   <a
@@ -128,7 +168,12 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Left Column - Contact Form */}
-            <div>
+            <div 
+              ref={(el) => { sectionRefs.current['form'] = el; }}
+              className={`transition-all duration-1000 delay-300 ${
+                visibleSections.has('form') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+              }`}
+            >
               <form className="space-y-6">
                 
                 {/* Name Input */}
