@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// Project data - Update with your actual projects
+// Project data - Keep as is (duplicate IDs removed in this refactor)
 const projectsData = [
+  // ... (same as your data, but I removed duplicates)
   {
     id: 1,
     title: "Project One",
@@ -9,59 +10,8 @@ const projectsData = [
     fullDescription: "This is a more detailed description of Project One. Here you can explain the problem it solves, your role in the project, challenges faced, and key features implemented. Add as much detail as you'd like about the architecture, design decisions, and technologies used.",
     images: [
       "/images/sample1.png",
-      "/images/sample1.png",
-      "/images/sample1.png"
-    ],
-    technologies: ["React", "TypeScript", "Tailwind CSS"],
-    type: "Owned", // "Owned" or "Contributed"
-    role: "Full Stack Developer",
-    duration: "3 months",
-    liveLink: "https://example.com",
-    githubLink: "https://github.com/yourusername/project1"
-  },
-  {
-    id: 2,
-    title: "Project Two",
-    description: "A brief description of Project Two, highlighting its features and technologies used.",
-    fullDescription: "This is a more detailed description of Project Two. Explain your contributions, the team size, what you learned, and the impact of the project. Include technical challenges and how you overcame them.",
-    images: [
       "/images/sample2.png",
-      "/images/sample2.png",
-      "/images/sample2.png"
-    ],
-    technologies: ["Node.js", "Express", "MongoDB"],
-    type: "Contributed",
-    role: "Backend Developer",
-    duration: "2 months",
-    liveLink: "https://example.com",
-    githubLink: "https://github.com/yourusername/project2"
-  },
-  {
-    id: 3,
-    title: "Project Three",
-    description: "A brief description of Project Three, highlighting its features and technologies used.",
-    fullDescription: "This is a more detailed description of Project Three. Discuss the scope of the project, your specific contributions, technologies you mastered, and the outcomes achieved. Share any metrics or results if applicable.",
-    images: [
-      "/images/sample3.png",
-      "/images/sample3.png",
       "/images/sample3.png"
-    ],
-    technologies: ["Next.js", "PostgreSQL", "Prisma"],
-    type: "Owned",
-    role: "Lead Developer",
-    duration: "4 months",
-    liveLink: "https://example.com",
-    githubLink: "https://github.com/yourusername/project3"
-  },
-  {
-    id: 1,
-    title: "Project One",
-    description: "A brief description of Project One, highlighting its features and technologies used.",
-    fullDescription: "This is a more detailed description of Project One. Here you can explain the problem it solves, your role in the project, challenges faced, and key features implemented. Add as much detail as you'd like about the architecture, design decisions, and technologies used.",
-    images: [
-      "/images/sample1.png",
-      "/images/sample1.png",
-      "/images/sample1.png"
     ],
     technologies: ["React", "TypeScript", "Tailwind CSS"],
     type: "Owned", // "Owned" or "Contributed"
@@ -109,36 +59,151 @@ const projectsData = [
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projectsData[0] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [direction, setDirection] = useState<'next' | 'prev' | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false); // NEW: Animation lock
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // Circular index helpers (unchanged)
+  const getNextIndex = () =>
+    selectedProject
+      ? (currentImageIndex + 1) % selectedProject.images.length
+      : 0;
+
+  const getPrevIndex = () =>
+    selectedProject
+      ? (currentImageIndex - 1 + selectedProject.images.length) %
+        selectedProject.images.length
+      : 0;
 
   const openModal = (project: typeof projectsData[0]) => {
     setSelectedProject(project);
     setCurrentImageIndex(0);
-    document.body.style.overflow = 'hidden'; // Prevent background scroll
+    setDirection(null);
+    setIsAnimating(false);
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setSelectedProject(null);
     setCurrentImageIndex(0);
+    setIsAnimating(false);
+    setIsFullscreen(false);
     document.body.style.overflow = 'unset';
   };
 
-  const nextImage = () => {
-    if (selectedProject) {
-      setCurrentImageIndex((prev) => 
-        prev === selectedProject.images.length - 1 ? 0 : prev + 1
-      );
+  const enterFullscreen = () => {
+    setIsFullscreen(true);
+  };
+
+  const exitFullscreen = () => {
+    setIsFullscreen(false);
+  };
+
+  // ✅ UNIFIED NAVIGATION FUNCTION - Single source of truth for all slide changes
+  const changeSlide = (slideDirection: 'next' | 'prev') => {
+    if (!selectedProject || isAnimating) return; // Lock during animation
+    
+    // Clear any drag offset immediately to prevent snap-back
+    setDragOffset(0);
+    setIsAnimating(true);
+    setDirection(slideDirection);
+  };
+
+  // Animation complete handler - updates index and unlocks navigation
+  const handleAnimationEnd = () => {
+    if (direction === 'next') {
+      setCurrentImageIndex(getNextIndex());
+    } else if (direction === 'prev') {
+      setCurrentImageIndex(getPrevIndex());
+    }
+    setDirection(null);
+    setIsAnimating(false);
+  };
+
+  // NEW: Unified thumbnail click handler
+  const handleThumbnailClick = (index: number) => {
+    if (!selectedProject || isAnimating) return;
+    
+    if (index === currentImageIndex) return; // Already on this image
+    
+    // Determine direction for animation
+    const newDirection = index > currentImageIndex ? 'next' : 'prev';
+    setIsAnimating(true);
+    setDirection(newDirection);
+    
+    // Use setTimeout to allow animation to start before index update
+    setTimeout(() => {
+      setCurrentImageIndex(index);
+      setDirection(null);
+      setIsAnimating(false);
+    }, 600); // Match animation duration
+  };
+
+  // Touch/Drag handlers
+  const handleDragStart = (clientX: number) => {
+    if (isAnimating) return;
+    setIsDragging(true);
+    setDragStart(clientX);
+    setDragOffset(0);
+  };
+
+  const handleDragMove = (clientX: number) => {
+    if (!isDragging || isAnimating) return;
+    const offset = clientX - dragStart;
+    setDragOffset(offset);
+  };
+
+  const handleDragEnd = () => {
+    if (!isDragging || isAnimating) return;
+    setIsDragging(false);
+    
+    const threshold = 50;
+    if (Math.abs(dragOffset) > threshold) {
+      // Swipe right = prev, swipe left = next
+      changeSlide(dragOffset > 0 ? 'prev' : 'next');
+    } else {
+      // Under threshold - snap back to center smoothly
+      setDragOffset(0);
     }
   };
 
-  const prevImage = () => {
-    if (selectedProject) {
-      setCurrentImageIndex((prev) => 
-        prev === 0 ? selectedProject.images.length - 1 : prev - 1
-      );
+  // Touch events (mobile)
+  const onTouchStart = (e: React.TouchEvent) => {
+    handleDragStart(e.touches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    handleDragMove(e.touches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    handleDragEnd();
+  };
+
+  // Mouse events (desktop)
+  const onMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    handleDragStart(e.clientX);
+  };
+
+  const onMouseMove = (e: React.MouseEvent) => {
+    handleDragMove(e.clientX);
+  };
+
+  const onMouseUp = () => {
+    handleDragEnd();
+  };
+
+  const onMouseLeave = () => {
+    if (isDragging) {
+      handleDragEnd();
     }
   };
 
-  // Animation state and refs
+  // Animation state and refs (unchanged)
   const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
   const [headerVisible, setHeaderVisible] = useState(false);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -279,7 +344,7 @@ const Projects: React.FC = () => {
                   onClick={(e) => e.stopPropagation()}
                 >
                   {/* Modal Header */}
-                  <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center">
+                  <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center z-10">
                     <h2 className="text-2xl font-bold text-gray-900">{selectedProject.title}</h2>
                     <button
                       onClick={closeModal}
@@ -293,25 +358,72 @@ const Projects: React.FC = () => {
                   <div className="p-6">
                     {/* Image Gallery with Navigation */}
                     <div className="relative mb-6">
-                      <div className="relative h-64 md:h-96 bg-gray-200 rounded-lg overflow-hidden">
+                      <div 
+                        className="relative h-64 md:h-96 bg-gray-200 rounded-lg overflow-hidden select-none"
+                        onTouchStart={onTouchStart}
+                        onTouchMove={onTouchMove}
+                        onTouchEnd={onTouchEnd}
+                        onMouseDown={onMouseDown}
+                        onMouseMove={onMouseMove}
+                        onMouseUp={onMouseUp}
+                        onMouseLeave={onMouseLeave}
+                        style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+                      >
+                        {/* CURRENT IMAGE (slides out) */}
                         <img
+                          key={`current-${currentImageIndex}`}
                           src={selectedProject.images[currentImageIndex]}
                           alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
-                          className="w-full h-full object-cover"
+                          className={`absolute inset-0 w-full h-full object-cover pointer-events-none ${
+                            direction === 'next'
+                              ? 'animate-slide-out-left'
+                              : direction === 'prev'
+                              ? 'animate-slide-out-right'
+                              : ''
+                          }`}
+                          style={{
+                            transform: dragOffset !== 0 && !direction ? `translateX(${dragOffset}px)` : undefined,
+                            transition: !isDragging && !direction ? 'transform 0.2s ease-out' : 'none'
+                          }}
                         />
+
+                        {/* INCOMING IMAGE (slides in) */}
+                        {direction && (
+                          <img
+                            key={`incoming-${direction === 'next' ? getNextIndex() : getPrevIndex()}`}
+                            src={
+                              direction === 'next'
+                                ? selectedProject.images[getNextIndex()]
+                                : selectedProject.images[getPrevIndex()]
+                            }
+                            alt={`${selectedProject.title} screenshot ${
+                              (direction === 'next' ? getNextIndex() : getPrevIndex()) + 1
+                            }`}
+                            className={`absolute inset-0 w-full h-full object-cover ${
+                              direction === 'next'
+                                ? 'animate-slide-in-from-right'
+                                : 'animate-slide-in-from-left'
+                            }`}
+                            onAnimationEnd={handleAnimationEnd}
+                          />
+                        )}
                         
-                        {/* Image Navigation Buttons */}
+                        {/* Image Navigation Buttons - NOW USING changeSlide() */}
                         {selectedProject.images.length > 1 && (
                           <>
                             <button
-                              onClick={prevImage}
-                              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-75 hover:bg-opacity-100 text-gray-800 font-bold py-2 px-3 rounded-full transition-all"
+                              onClick={() => changeSlide('prev')}
+                              disabled={isAnimating}
+                              aria-label="Previous image"
+                              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-75 hover:bg-opacity-100 text-gray-800 font-bold py-2 px-3 rounded-full transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                               ‹
                             </button>
                             <button
-                              onClick={nextImage}
-                              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-75 hover:bg-opacity-100 text-gray-800 font-bold py-2 px-3 rounded-full transition-all"
+                              onClick={() => changeSlide('next')}
+                              disabled={isAnimating}
+                              aria-label="Next image"
+                              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-75 hover:bg-opacity-100 text-gray-800 font-bold py-2 px-3 rounded-full transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                               ›
                             </button>
@@ -322,20 +434,33 @@ const Projects: React.FC = () => {
                             </div>
                           </>
                         )}
+
+                        {/* Fullscreen Button */}
+                        <button
+                          onClick={enterFullscreen}
+                          aria-label="View fullscreen"
+                          className="absolute bottom-3 left-3 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition-all"
+                          title="View fullscreen"
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                          </svg>
+                        </button>
                       </div>
 
                       {/* Image Thumbnails */}
                       {selectedProject.images.length > 1 && (
-                        <div className="flex gap-2 mt-3 overflow-x-auto">
+                        <div className="flex gap-2 mt-3">
                           {selectedProject.images.map((img, index) => (
                             <button
                               key={index}
-                              onClick={() => setCurrentImageIndex(index)}
-                              className={`flex-shrink-0 w-20 h-20 rounded border-2 overflow-hidden ${
+                              onClick={() => handleThumbnailClick(index)}
+                              disabled={isAnimating}
+                              className={`flex-shrink-0 w-20 h-20 rounded border-2 overflow-hidden transition-all ${
                                 currentImageIndex === index 
-                                  ? 'border-blue-600' 
-                                  : 'border-gray-300'
-                              }`}
+                                  ? 'border-blue-600 scale-105' 
+                                  : 'border-gray-300 hover:border-gray-400'
+                              } ${isAnimating ? 'opacity-50 cursor-wait' : ''}`}
                             >
                               <img
                                 src={img}
@@ -409,6 +534,56 @@ const Projects: React.FC = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+            )}
+
+            {/* Fullscreen View */}
+            {isFullscreen && selectedProject && (
+              <div className="fixed inset-0 bg-black z-[60] flex items-center justify-center">
+                {/* Exit Fullscreen Button */}
+                <button
+                  onClick={exitFullscreen}
+                  aria-label="Exit fullscreen"
+                  className="absolute top-4 right-4 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full transition-all z-10"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+
+                {/* Fullscreen Image */}
+                <img
+                  src={selectedProject.images[currentImageIndex]}
+                  alt={`${selectedProject.title} screenshot ${currentImageIndex + 1} - Fullscreen`}
+                  className="max-w-full max-h-full object-contain"
+                />
+
+                {/* Navigation in Fullscreen */}
+                {selectedProject.images.length > 1 && (
+                  <>
+                    <button
+                      onClick={() => changeSlide('prev')}
+                      disabled={isAnimating}
+                      aria-label="Previous image"
+                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-3 px-4 rounded-full transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      ‹
+                    </button>
+                    <button
+                      onClick={() => changeSlide('next')}
+                      disabled={isAnimating}
+                      aria-label="Next image"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-3 px-4 rounded-full transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      ›
+                    </button>
+
+                    {/* Image Counter in Fullscreen */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full text-sm">
+                      {currentImageIndex + 1} / {selectedProject.images.length}
+                    </div>
+                  </>
+                )}
               </div>
             )}
         </div>
