@@ -1,63 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-
-// Project data - Keep as is (duplicate IDs removed in this refactor)
-const projectsData = [
-  // ... (same as your data, but I removed duplicates)
-  {
-    id: 1,
-    title: "Project One",
-    description: "A brief description of Project One, highlighting its features and technologies used.",
-    fullDescription: "This is a more detailed description of Project One. Here you can explain the problem it solves, your role in the project, challenges faced, and key features implemented. Add as much detail as you'd like about the architecture, design decisions, and technologies used.",
-    images: [
-      "/images/sample1.png",
-      "/images/sample2.png",
-      "/images/sample3.png"
-    ],
-    technologies: ["React", "TypeScript", "Tailwind CSS"],
-    type: "Owned", // "Owned" or "Contributed"
-    role: "Full Stack Developer",
-    duration: "3 months",
-    liveLink: "https://example.com",
-    githubLink: "https://github.com/yourusername/project1"
-  },
-  {
-    id: 2,
-    title: "Project Two",
-    description: "A brief description of Project Two, highlighting its features and technologies used.",
-    fullDescription: "This is a more detailed description of Project Two. Explain your contributions, the team size, what you learned, and the impact of the project. Include technical challenges and how you overcame them.",
-    images: [
-      "/images/sample2.png",
-      "/images/sample2.png",
-      "/images/sample2.png"
-    ],
-    technologies: ["Node.js", "Express", "MongoDB"],
-    type: "Contributed",
-    role: "Backend Developer",
-    duration: "2 months",
-    liveLink: "https://example.com",
-    githubLink: "https://github.com/yourusername/project2"
-  },
-  {
-    id: 3,
-    title: "Project Three",
-    description: "A brief description of Project Three, highlighting its features and technologies used.",
-    fullDescription: "This is a more detailed description of Project Three. Discuss the scope of the project, your specific contributions, technologies you mastered, and the outcomes achieved. Share any metrics or results if applicable.",
-    images: [
-      "/images/sample3.png",
-      "/images/sample3.png",
-      "/images/sample3.png"
-    ],
-    technologies: ["Next.js", "PostgreSQL", "Prisma"],
-    type: "Owned",
-    role: "Lead Developer",
-    duration: "4 months",
-    liveLink: "https://example.com",
-    githubLink: "https://github.com/yourusername/project3"
-  }
-];
+import { projectsData, Project } from '../data/projectsData';
 
 const Projects: React.FC = () => {
-  const [selectedProject, setSelectedProject] = useState<typeof projectsData[0] | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [direction, setDirection] = useState<'next' | 'prev' | null>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -65,6 +10,11 @@ const Projects: React.FC = () => {
   const [dragOffset, setDragOffset] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false); // NEW: Animation lock
   const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // Helper to detect if URL is a video
+  const isVideo = (url: string) => {
+    return /\.(mp4|webm|ogg|mov)$/i.test(url) || url.includes('cloudinary.com/video/');
+  };
 
   // Circular index helpers (unchanged)
   const getNextIndex = () =>
@@ -78,7 +28,7 @@ const Projects: React.FC = () => {
         selectedProject.images.length
       : 0;
 
-  const openModal = (project: typeof projectsData[0]) => {
+  const openModal = (project: Project) => {
     setSelectedProject(project);
     setCurrentImageIndex(0);
     setDirection(null);
@@ -297,7 +247,7 @@ const Projects: React.FC = () => {
                     style={{ transitionDelay: `${(index % 3) * 150}ms` }}
                   >
                     {/* Project Image */}
-                    <div className="relative h-48 bg-gray-200 overflow-hidden">
+                    <div className="relative h-48 bg-gray-900 overflow-hidden">
                       <img
                         src={project.images[0]}
                         alt={project.title}
@@ -344,7 +294,7 @@ const Projects: React.FC = () => {
                   onClick={(e) => e.stopPropagation()}
                 >
                   {/* Modal Header */}
-                  <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center z-10">
+                  <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center z-10 shadow-lg">
                     <h2 className="text-2xl font-bold text-gray-900">{selectedProject.title}</h2>
                     <button
                       onClick={closeModal}
@@ -369,43 +319,86 @@ const Projects: React.FC = () => {
                         onMouseLeave={onMouseLeave}
                         style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
                       >
-                        {/* CURRENT IMAGE (slides out) */}
-                        <img
-                          key={`current-${currentImageIndex}`}
-                          src={selectedProject.images[currentImageIndex]}
-                          alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
-                          className={`absolute inset-0 w-full h-full object-cover pointer-events-none ${
-                            direction === 'next'
-                              ? 'animate-slide-out-left'
-                              : direction === 'prev'
-                              ? 'animate-slide-out-right'
-                              : ''
-                          }`}
-                          style={{
-                            transform: dragOffset !== 0 && !direction ? `translateX(${dragOffset}px)` : undefined,
-                            transition: !isDragging && !direction ? 'transform 0.2s ease-out' : 'none'
-                          }}
-                        />
-
-                        {/* INCOMING IMAGE (slides in) */}
-                        {direction && (
+                        {/* CURRENT MEDIA (slides out) */}
+                        {isVideo(selectedProject.images[currentImageIndex]) ? (
+                          <video
+                            key={`current-${currentImageIndex}`}
+                            src={selectedProject.images[currentImageIndex]}
+                            controls
+                            className={`absolute inset-0 w-full h-full object-contain pointer-events-auto ${
+                              direction === 'next'
+                                ? 'animate-slide-out-left'
+                                : direction === 'prev'
+                                ? 'animate-slide-out-right'
+                                : ''
+                            }`}
+                            style={{
+                              transform: dragOffset !== 0 && !direction ? `translateX(${dragOffset}px)` : undefined,
+                              transition: !isDragging && !direction ? 'transform 0.2s ease-out' : 'none'
+                            }}
+                          />
+                        ) : (
                           <img
-                            key={`incoming-${direction === 'next' ? getNextIndex() : getPrevIndex()}`}
-                            src={
+                            key={`current-${currentImageIndex}`}
+                            src={selectedProject.images[currentImageIndex]}
+                            alt={`${selectedProject.title} screenshot ${currentImageIndex + 1}`}
+                            className={`absolute inset-0 w-full h-full object-cover pointer-events-none ${
+                              direction === 'next'
+                                ? 'animate-slide-out-left'
+                                : direction === 'prev'
+                                ? 'animate-slide-out-right'
+                                : ''
+                            }`}
+                            style={{
+                              transform: dragOffset !== 0 && !direction ? `translateX(${dragOffset}px)` : undefined,
+                              transition: !isDragging && !direction ? 'transform 0.2s ease-out' : 'none'
+                            }}
+                          />
+                        )}
+
+                        {/* INCOMING MEDIA (slides in) */}
+                        {direction && (
+                          <>
+                            {isVideo(
                               direction === 'next'
                                 ? selectedProject.images[getNextIndex()]
                                 : selectedProject.images[getPrevIndex()]
-                            }
-                            alt={`${selectedProject.title} screenshot ${
-                              (direction === 'next' ? getNextIndex() : getPrevIndex()) + 1
-                            }`}
-                            className={`absolute inset-0 w-full h-full object-cover ${
-                              direction === 'next'
-                                ? 'animate-slide-in-from-right'
-                                : 'animate-slide-in-from-left'
-                            }`}
-                            onAnimationEnd={handleAnimationEnd}
-                          />
+                            ) ? (
+                              <video
+                                key={`incoming-${direction === 'next' ? getNextIndex() : getPrevIndex()}`}
+                                src={
+                                  direction === 'next'
+                                    ? selectedProject.images[getNextIndex()]
+                                    : selectedProject.images[getPrevIndex()]
+                                }
+                                controls
+                                className={`absolute inset-0 w-full h-full object-contain pointer-events-auto ${
+                                  direction === 'next'
+                                    ? 'animate-slide-in-from-right'
+                                    : 'animate-slide-in-from-left'
+                                }`}
+                                onAnimationEnd={handleAnimationEnd}
+                              />
+                            ) : (
+                              <img
+                                key={`incoming-${direction === 'next' ? getNextIndex() : getPrevIndex()}`}
+                                src={
+                                  direction === 'next'
+                                    ? selectedProject.images[getNextIndex()]
+                                    : selectedProject.images[getPrevIndex()]
+                                }
+                                alt={`${selectedProject.title} screenshot ${
+                                  (direction === 'next' ? getNextIndex() : getPrevIndex()) + 1
+                                }`}
+                                className={`absolute inset-0 w-full h-full object-cover ${
+                                  direction === 'next'
+                                    ? 'animate-slide-in-from-right'
+                                    : 'animate-slide-in-from-left'
+                                }`}
+                                onAnimationEnd={handleAnimationEnd}
+                              />
+                            )}
+                          </>
                         )}
                         
                         {/* Image Navigation Buttons - NOW USING changeSlide() */}
@@ -450,7 +443,7 @@ const Projects: React.FC = () => {
 
                       {/* Image Thumbnails */}
                       {selectedProject.images.length > 1 && (
-                        <div className="flex gap-2 mt-3">
+                        <div className="flex gap-2 mt-3 overflow-x-auto pb-2 scrollbar-hide">
                           {selectedProject.images.map((img, index) => (
                             <button
                               key={index}
@@ -462,40 +455,38 @@ const Projects: React.FC = () => {
                                   : 'border-gray-300 hover:border-gray-400'
                               } ${isAnimating ? 'opacity-50 cursor-wait' : ''}`}
                             >
-                              <img
-                                src={img}
-                                alt={`Thumbnail ${index + 1}`}
-                                className="w-full h-full object-cover"
-                              />
+                              {isVideo(img) ? (
+                                <div className="relative w-full h-full">
+                                  <img
+                                    src="/images/3d-campus.jpg"
+                                    alt="Video thumbnail"
+                                    className="w-full h-full object-cover"
+                                  />
+                                  <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="w-[25px] h-[25px] rounded-full bg-white bg-opacity-90 flex items-center justify-center shadow-lg">
+                                      <svg className="w-4 h-4 text-gray-800 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                              ) : (
+                                <img
+                                  src={img}
+                                  alt={`Thumbnail ${index + 1}`}
+                                  className="w-full h-full object-cover"
+                                />
+                              )}
                             </button>
                           ))}
                         </div>
                       )}
                     </div>
 
-                    {/* Project Type & Role */}
-                    <div className="flex flex-wrap gap-3 mb-4">
-                      <span className={`px-4 py-2 text-sm font-semibold rounded-lg ${
-                        selectedProject.type === 'Owned' 
-                          ? 'bg-green-100 text-green-700' 
-                          : 'bg-blue-100 text-blue-700'
-                      }`}>
-                        {selectedProject.type}
-                      </span>
-                      <span className="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg">
-                        {selectedProject.role}
-                      </span>
-                      <span className="px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg">
-                        Duration: {selectedProject.duration}
-                      </span>
-                    </div>
-
                     {/* Full Description */}
                     <div className="mb-6">
                       <h3 className="text-lg font-semibold text-gray-900 mb-2">About This Project</h3>
-                      <p className="text-gray-600 leading-relaxed">
-                        {selectedProject.fullDescription}
-                      </p>
+                      <p className="text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: selectedProject.fullDescription }} />
                     </div>
 
                     {/* Technologies */}
@@ -551,12 +542,21 @@ const Projects: React.FC = () => {
                   </svg>
                 </button>
 
-                {/* Fullscreen Image */}
-                <img
-                  src={selectedProject.images[currentImageIndex]}
-                  alt={`${selectedProject.title} screenshot ${currentImageIndex + 1} - Fullscreen`}
-                  className="max-w-full max-h-full object-contain"
-                />
+                {/* Fullscreen Media */}
+                {isVideo(selectedProject.images[currentImageIndex]) ? (
+                  <video
+                    src={selectedProject.images[currentImageIndex]}
+                    controls
+                    autoPlay
+                    className="max-w-full max-h-full object-contain"
+                  />
+                ) : (
+                  <img
+                    src={selectedProject.images[currentImageIndex]}
+                    alt={`${selectedProject.title} screenshot ${currentImageIndex + 1} - Fullscreen`}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                )}
 
                 {/* Navigation in Fullscreen */}
                 {selectedProject.images.length > 1 && (

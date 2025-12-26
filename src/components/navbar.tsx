@@ -17,9 +17,9 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Navigation - Hidden on mobile */}
         <ul className="hidden md:flex gap-6 text-sm text-gray-600">
-          <li>
+          {/*<li>
             <a href="#about" className="cursor-pointer hover:text-black transition-colors">ABOUT ME</a>
-          </li>
+          </li>*/}
           <li>
             <a href="#projects" className="cursor-pointer hover:text-black transition-colors">PROJECTS</a>
           </li>
@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
         }`}
       >
         <ul className="flex flex-col gap-4 px-6 pt-20 text-sm text-gray-600">
-          <li>
+          {/*<li>
             <a 
               href="#about"
               className="block cursor-pointer hover:text-black transition-colors py-3 border-b border-gray-100"
@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
             >
               ABOUT ME
             </a>
-          </li>
+          </li>*/}
 
           <li>
             <a 

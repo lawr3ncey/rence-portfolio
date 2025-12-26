@@ -54,11 +54,11 @@ const Hero: React.FC = () => {
           <p className="text-gray-600 mb-6 font-bold text-base sm:text-lg">Here's what I can do</p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
-            <a href="#resume" className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 text-sm sm:text-base font-semibold">
+            <a href="#resume" className="btn-primary text-sm sm:text-base text-center">
               My Resume
             </a>
 
-            <a href="#projects" className="border border-gray-400 px-6 py-2 rounded-full hover:bg-gray-100 text-sm font-semibold">
+            <a href="#projects" className="btn-secondary text-sm text-center">
               My Portfolio
             </a>
           </div>
