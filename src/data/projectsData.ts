@@ -181,12 +181,12 @@ export const projectsData: Project[] = [
     description: "A brief description of Project Six, highlighting its features and technologies used.",
     fullDescription: "This is a more detailed description of Project Six. Explain the business problem, your solution approach, the team dynamics, and the outcomes achieved.",
     images: [
-      "/images/save-social-app/savesocial-1.jpg",
-      "/images/save-social-app/savesocial-2.jpg",
-      "/images/save-social-app/savesocial-3.jpg",
-      "/images/save-social-app/savesocial-4.jpg",
-      "/images/save-social-app/savesocial-5.jpg",
-      "/images/save-social-app/savesocial-6.jpg"
+      "/images/save-social-App/savesocial-1.jpg",
+      "/images/save-social-App/savesocial-2.jpg",
+      "/images/save-social-App/savesocial-3.jpg",
+      "/images/save-social-App/savesocial-4.jpg",
+      "/images/save-social-App/savesocial-5.jpg",
+      "/images/save-social-App/savesocial-6.jpg"
     ],
     technologies: ["Angular", "Node.js", "PostgreSQL"],
     type: "Contributed",
