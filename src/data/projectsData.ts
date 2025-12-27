@@ -164,16 +164,23 @@ export const projectsData: Project[] = [
     description: "A brief description of Project Five, highlighting its features and technologies used.",
     fullDescription: "This is a more detailed description of Project Five. Share the impact of the project, your role in the team, key learnings, and the technologies you worked with.",
     images: [
-      "/images/outSource3.jpg",
-      "/images/sample1.png",
-      "/images/sample2.png"
+      "/images/pmms/pmms-1.jpg",
+      "/images/pmms/pmms-2.jpg",
+      "/images/pmms/pmms-3.jpg",
+      "/images/pmms/pmms-4.jpg",
+      "/images/pmms/pmms-5.jpg",
+      "/images/pmms/pmms-6.jpg",
+      "/images/pmms/pmms-7.jpg",
+      "/images/pmms/pmms-8.jpg",
+      "/images/pmms/pmms-9.jpg",
+      "/images/pmms/pmms-10.jpg"
     ],
     technologies: ["Python", "Django", "Docker"],
     type: "Owned",
     role: "Full Stack Developer",
     duration: "5 months",
-    liveLink: "https://example.com",
-    githubLink: "#"
+    liveLink: "https://personal-money-management.vercel.app/",
+    githubLink: "https://github.com/lawr3ncey/personal-money-management-system"
   },
   {
     id: 9,
