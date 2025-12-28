@@ -458,7 +458,7 @@ const Projects: React.FC = () => {
                               {isVideo(img) ? (
                                 <div className="relative w-full h-full">
                                   <img
-                                    src="/images/3d-campus.jpg"
+                                    src="/images/3d-campus/3d-campus.jpg"
                                     alt="Video thumbnail"
                                     className="w-full h-full object-cover"
                                   />

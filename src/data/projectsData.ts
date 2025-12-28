@@ -117,7 +117,8 @@ export const projectsData: Project[] = [
     liveLink: "https://elevateresultsph.com/",
     githubLink: "#"
   },
-  {
+  
+  /* {
     id: 6,
     title: "OutSource: Customers Index",
     description: "A brief description of Project Six, highlighting its features and technologies used.",
@@ -137,7 +138,7 @@ export const projectsData: Project[] = [
     duration: "3 months",
     liveLink: "#",
     githubLink: "#"
-  },
+  }, */
 
   {
     id: 7,
@@ -151,7 +152,7 @@ export const projectsData: Project[] = [
       "/images/piercing-studio/piercing-studio-4.jpg",
       "/images/piercing-studio/piercing-studio-5.jpg"
     ],
-    technologies: ["Vue.js", "Firebase", "TailwindCSS"],
+    technologies: ["React.js", "Node.js", "MongoDB", "Express", "React Router", "Material UI", "Netlify"],
     type: "Contributed",
     role: "Frontend Developer",
     duration: "2 months",
