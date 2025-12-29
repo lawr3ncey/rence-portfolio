@@ -81,12 +81,15 @@ const Resume: React.FC = () => {
                                 <h4 className="text-xl font-semibold text-gray-900">Full-Stack Software Developer</h4>
                                 <span className="text-sm text-gray-500 mt-1 sm:mt-0">September 2025 - Present</span>
                             </div>
-                            <p className="text-blue-600 font-medium mb-3">Nexvision Innovations Inc. (BGC-Taguig)</p>
+                            <p className="text-blue-600 font-medium mb-3">Nexvision Innovations Inc. (BGC)</p>
                             <ul className="text-gray-600 text-sm space-y-2 list-disc list-inside">
                                 <li>Led development of responsive web applications using React, TypeScript, and Tailwind CSS</li>
-                                <li>Collaborated with cross-functional teams to deliver high-quality software solutions</li>
-                                <li>Implemented CI/CD pipelines and improved deployment efficiency by 40%</li>
+                                <li>Collaborated with senior developers and designers to translate UI designs into functional, responsive web pages</li>
+                                <li>Gained hands-on experience working with real client requirements, deployment environments, and version control workflows</li>
                                 <li>Mentored junior developers and conducted code reviews</li>
+                                <li>Supported WordPress-based projects through custom theme development and feature enhancements</li>
+                                <li>Assisted in testing, debugging, and maintaining production websites</li>
+
                             </ul>
                         </div>
 
@@ -94,15 +97,15 @@ const Resume: React.FC = () => {
                         <div className="relative pl-8 border-l-2 border-gray-300">
                             <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full"></div>
                             <div className="mb-1 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                                <h4 className="text-xl font-semibold text-gray-900">Full-Stack Developer Intern</h4>
+                                <h4 className="text-xl font-semibold text-gray-900">Junior Full-Stack Developer Intern</h4>
                                 <span className="text-sm text-gray-500 mt-1 sm:mt-0">March 2025 - June 2025</span>
                             </div>
                             <p className="text-blue-600 font-medium mb-3">Alpha Premier Group of Companies OPC (Ortigas)</p>
                             <ul className="text-gray-600 text-sm space-y-2 list-disc list-inside">
-                                <li>Built and maintained multiple client websites with focus on performance and accessibility</li>
-                                <li>Developed reusable component libraries to streamline development process</li>
-                                <li>Optimized web applications resulting in 50% faster load times</li>
-                                <li>Worked closely with designers to implement pixel-perfect UI/UX</li>
+                                <li>Contributed to the development and maintenance of client websites using HTML, CSS, JavaScript, PHP, and MySQL</li>
+                                <li>Implemented backend features such as form handling, data validation, and database integration</li>
+                                <li>Performed basic performance optimizations and bug fixes to improve site stability and user experience</li>
+                                <li>Developed and maintained backend logic for client systems, including CRUD operations and data processing</li>
                             </ul>
                         </div>
                     </div>
@@ -194,6 +197,8 @@ const Resume: React.FC = () => {
                             <div className="flex flex-wrap gap-2">
                                 <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Node.js</span>
                                 <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Express.js</span>
+                                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">C#</span>
+                                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">C++</span>
                                 <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">PHP</span>
                                 <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">Python</span>
                                 <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">MySQL</span>
@@ -212,7 +217,7 @@ const Resume: React.FC = () => {
                                 <span className="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm">Git</span>
                                 <span className="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm">Vercel</span>
                                 <span className="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm">Netlify</span>
-                                <span className="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm">SEO</span>
+                                <span className="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm">Blender</span>
                             </div>
                         </div>
 
@@ -221,10 +226,10 @@ const Resume: React.FC = () => {
                             <h4 className="text-lg font-semibold text-gray-900 mb-4">Other Technologies</h4>
                             <div className="flex flex-wrap gap-2">
                                 <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">Unity</span>
-                                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">Blender</span>
-                                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">C#</span>
-                                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">C++</span>
                                 <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">Machine Learning</span>
+                                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">SEO</span>
+                                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">aaPanel</span>
+                                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">GreenGeeks</span>
                             </div>
                         </div>
                     </div>

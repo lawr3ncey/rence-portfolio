@@ -206,7 +206,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-semibold text-gray-900 mb-1">Address</h4>
-                    <p className="text-sm text-[#4b5563]">4528 V. Francisco Street, Sta. Mesa, Manila, Philippines</p>
+                    <p className="text-sm text-[#4b5563]">Manila, Philippines</p>
                   </div>
                 </div>
 

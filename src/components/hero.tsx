@@ -68,6 +68,13 @@ const Hero: React.FC = () => {
             I also have experience developing applications using Unity and React Native. 
             I focus on clean design, accessibility, and performance, and I enjoy turning ideas into functional, 
             well-structured solutions.
+            <br></br>
+            <br></br>
+            Alongside my technical work, I value collaboration and user-centered design. 
+            My background in Computer Science, backend development, and UI implementation 
+            allows me to build systems that balance functionality, performance, and usability. 
+            I’m continuously learning and currently exploring AI integration and emerging technologies 
+            to create smarter and more innovative digital experiences.
           </p>
         </div>
 

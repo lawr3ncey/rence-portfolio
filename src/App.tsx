@@ -4,6 +4,7 @@ import Hero from "./components/hero"
 import Resume from "./components/resume"
 import Projects from "./components/projects"
 import Contact from "./components/contact"
+import Footer from "./components/footer"
 
 const App: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const App: React.FC = () => {
       <Projects />
       <Resume />
       <Contact />
+      <Footer />
     </div>
   )
 }
