@@ -22,7 +22,7 @@ const ProfileCard: React.FC = () => {
       {/* Icon section */}
       <div className="flex justify-center gap-2">
         <a
-          href="https://github.com"
+          href="https://github.com/lawr3ncey"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#4b5563] w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-black hover:text-white transition"

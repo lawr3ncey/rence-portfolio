@@ -222,7 +222,7 @@ const Contact: React.FC = () => {
                 <h4 className="text-sm font-semibold text-gray-900 mb-4">Follow Me On</h4>
                 <div className="flex space-x-3">
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/babelonia-lawrence-951582354/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-icon text-[#4b5563] w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white"
@@ -231,7 +231,7 @@ const Contact: React.FC = () => {
                     <FaLinkedinIn />
                   </a>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/lawr3ncey"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-icon text-[#4b5563] w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-black hover:text-white"
@@ -249,25 +249,25 @@ const Contact: React.FC = () => {
                     <FaFacebookF />
                   </a>
                   <a
-                            href="https://instagram.com/yourprofile"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="
-                            btn-icon
-                            text-[#4b5563]
-                              group
-                              w-10 h-10
-                              flex items-center justify-center
-                              rounded-full
-                              bg-gray-100
-                              hover:bg-gradient-to-tr
-                              hover:from-yellow-400
-                              hover:via-pink-500
-                              hover:to-purple-600
-                            "
-                          >
-                            <FaInstagram className="text-lg group-hover:text-white transition" />
-                          </a>
+                    href="https://instagram.com/yourprofile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                    btn-icon
+                    text-[#4b5563]
+                      group
+                      w-10 h-10
+                      flex items-center justify-center
+                      rounded-full
+                      bg-gray-100
+                      hover:bg-gradient-to-tr
+                      hover:from-yellow-400
+                      hover:via-pink-500
+                      hover:to-purple-600
+                    "
+                  >
+                    <FaInstagram className="text-lg group-hover:text-white transition" />
+                  </a>
                 </div>
               </div>
 
