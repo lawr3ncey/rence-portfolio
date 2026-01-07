@@ -222,7 +222,7 @@ const Contact: React.FC = () => {
                 <h4 className="text-sm font-semibold text-gray-900 mb-4">Follow Me On</h4>
                 <div className="flex space-x-3">
                   <a
-                    href="https://www.linkedin.com/in/babelonia-lawrence-951582354/"
+                    href="https://www.linkedin.com/in/babelonia-lawrence/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-icon text-[#4b5563] w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white"
