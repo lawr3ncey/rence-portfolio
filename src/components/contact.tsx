@@ -188,7 +188,7 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Website */}
+                {/* Website  */}
                 <div className="flex items-start space-x-3 bg-white shadow-lg rounded-md p-6">
                   <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center">
                     <FaGlobe className="text-blue-600" />
