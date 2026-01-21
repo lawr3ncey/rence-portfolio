@@ -14,48 +14,12 @@ interface Certification {
 const certificationsData: Certification[] = [
     {
         id: 1,
-        title: "AWS Certified Solutions Architect",
-        issuer: "Amazon Web Services",
-        date: "December 2024",
-        credentialId: "AWS-SAA-123456",
-        credentialUrl: "https://aws.amazon.com/verification",
-        skills: ["Cloud Architecture", "AWS Services", "Security", "Networking"]
-    },
-    {
-        id: 2,
-        title: "Meta Front-End Developer Professional Certificate",
-        issuer: "Meta (via Coursera)",
-        date: "October 2024",
-        credentialId: "META-FED-789012",
-        credentialUrl: "https://coursera.org/verify",
-        skills: ["React", "JavaScript", "HTML/CSS", "UI/UX"]
-    },
-    {
-        id: 3,
-        title: "Google UX Design Professional Certificate",
-        issuer: "Google (via Coursera)",
-        date: "August 2024",
-        credentialId: "GOOGLE-UX-345678",
-        credentialUrl: "https://coursera.org/verify",
-        skills: ["User Research", "Wireframing", "Prototyping", "Figma"]
-    },
-    {
-        id: 4,
-        title: "Microsoft Certified: Azure Developer Associate",
-        issuer: "Microsoft",
-        date: "June 2024",
-        credentialId: "MS-AZ-204-901234",
-        credentialUrl: "https://learn.microsoft.com/certifications",
-        skills: ["Azure", "Cloud Development", ".NET", "DevOps"]
-    },
-    {
-        id: 5,
-        title: "Certified Scrum Master (CSM)",
-        issuer: "Scrum Alliance",
-        date: "March 2024",
-        credentialId: "CSM-567890",
-        credentialUrl: "https://scrumalliance.org/verify",
-        skills: ["Agile", "Scrum", "Project Management", "Team Leadership"]
+        title: "Microsoft Full-Stack Developer",
+        issuer: "Microsoft (via Coursera)",
+        date: "January 2026",
+        credentialId: "8Q6HL8OBWQL6",
+        credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/8Q6HL8OBWQL6",
+        skills: ["C#", "ASP.NET", "Full-Stack Development", ".NET Core", "Azure DevOps", "SQL", "Blazor", "Authentication"]
     }
 ];
 

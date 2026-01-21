@@ -27,6 +27,9 @@ const Navbar: React.FC = () => {
             <a href="#resume" className="cursor-pointer hover:text-black transition-colors">RESUME</a>
           </li>
           <li>
+            <a href="#certifications" className="cursor-pointer hover:text-black transition-colors">CERTIFICATIONS</a>
+          </li>
+          <li>
             <a href="#contact" className="cursor-pointer hover:text-black transition-colors">CONTACT</a>
           </li>
         </ul>
@@ -90,6 +93,16 @@ const Navbar: React.FC = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               RESUME
+            </a>
+          </li>
+
+          <li>
+            <a 
+              href="#certifications"
+              className="block cursor-pointer hover:text-black transition-colors py-3 border-b border-gray-100"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              CERTIFICATIONS
             </a>
           </li>
 
