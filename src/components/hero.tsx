@@ -65,15 +65,15 @@ const Hero: React.FC = () => {
           </div>
 
           <p className="text-gray-600 text-sm leading-relaxed">
-            I am a software developer who builds responsive and user-friendly web applications using modern technologies. 
-            I also have experience developing applications using Unity and React Native. 
-            I focus on clean design, accessibility, and performance, and I enjoy turning ideas into functional, 
-            well-structured solutions.
+            I am a Microsoft Certified Full Stack Developer who builds responsive and user-friendly web applications 
+            using modern technologies including React, TypeScript, Node.js, and more. I also have experience developing 
+            applications using Unity and React Native. I focus on clean design, accessibility, and performance, and I 
+            enjoy turning ideas into functional, well-structured solutions.
             <br></br>
             <br></br>
-            Alongside my technical work, I value collaboration and user-centered design. 
-            My background in Computer Science, backend development, and UI implementation 
-            allows me to build systems that balance functionality, performance, and usability. 
+            With my Microsoft Full Stack Developer Professional Certificate, I bring expertise in both frontend and 
+            backend development. I value collaboration and user-centered design, and my background in Computer Science 
+            allows me to build full-stack systems that balance functionality, performance, and usability. 
             I’m continuously learning and currently exploring AI integration and emerging technologies 
             to create smarter and more innovative digital experiences.
           </p>

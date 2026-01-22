@@ -11,7 +11,7 @@ const ProfileCard: React.FC = () => {
       />
 
       <h2 className="font-bold text-2xl">Lawrence Babelonia</h2>
-      <p className="text-sm text-gray-500 mb-4">Software Developer</p>
+      <p className="text-sm text-gray-500 mb-4">Full Stack Developer</p>
 
       <div className="w-10 h-1 bg-blue-500 mx-auto mb-[31px]"> </div>
 
