@@ -20,6 +20,15 @@ const certificationsData: Certification[] = [
         credentialId: "8Q6HL8OBWQL6",
         credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/8Q6HL8OBWQL6",
         skills: ["C#", "ASP.NET", "Full-Stack Development", ".NET Core", "Azure DevOps", "SQL", "Blazor", "Authentication"]
+    },
+    {
+        id: 2,
+        title: "Machine Learning with Python",
+        issuer: "freeCodeCamp",
+        date: "January 2026",
+        credentialId: "lawrence_babelonia/machine-learning-with-python-v7",
+        credentialUrl: "https://www.freecodecamp.org/certification/lawrence_babelonia/machine-learning-with-python-v7",
+        skills: ["Python", "Machine Learning", "TensorFlow", "Neural Networks", "Data Science", "NumPy", "Pandas"]
     }
 ];
 
