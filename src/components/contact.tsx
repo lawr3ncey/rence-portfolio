@@ -195,7 +195,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-semibold text-gray-900 mb-1">Website</h4>
-                    <p className="text-sm text-[#4b5563]"> <a href= "https://devrence.com/">https://devrence.com/</a> </p>
+                    <p className="text-sm text-[#4b5563]"> <a href= "https://devrence.com/">www.devrence.com</a> </p>
                   </div>
                 </div>
 
