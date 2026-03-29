@@ -22,15 +22,6 @@ const certificationsData: Certification[] = [
         skills: ["C#", "ASP.NET", "Full-Stack Development", ".NET Core", "Azure DevOps", "SQL", "Blazor", "Authentication"]
     },
     {
-        id: 2,
-        title: "Machine Learning with Python",
-        issuer: "freeCodeCamp",
-        date: "January 2026",
-        credentialId: "lawrence_babelonia/machine-learning-with-python-v7",
-        credentialUrl: "https://www.freecodecamp.org/certification/lawrence_babelonia/machine-learning-with-python-v7",
-        skills: ["Python", "Machine Learning", "TensorFlow", "Neural Networks", "Data Science", "NumPy", "Pandas"]
-    },
-    {
         id: 3,
         title: "IBM DevOps and Software Engineering",
         issuer: "IBM (via Coursera)",
@@ -38,6 +29,15 @@ const certificationsData: Certification[] = [
         credentialId: "MRGOJ4731FZS",
         credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/MRGQI4731FZS",
         skills: ["DevOps", "CI/CD", "Docker", "Kubernetes", "OpenShift", "Microservices", "Agile", "Scrum", "Python", "Linux", "Shell Scripting", "GitHub Actions", "Serverless", "Test-Driven Development"]
+    },
+    {
+        id: 2,
+        title: "Machine Learning with Python",
+        issuer: "freeCodeCamp",
+        date: "January 2026",
+        credentialId: "lawrence_babelonia/machine-learning-with-python-v7",
+        credentialUrl: "https://www.freecodecamp.org/certification/lawrence_babelonia/machine-learning-with-python-v7",
+        skills: ["Python", "Machine Learning", "TensorFlow", "Neural Networks", "Data Science", "NumPy", "Pandas"]
     },
     {
         id: 4,
