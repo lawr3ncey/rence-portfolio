@@ -41,6 +41,28 @@ export const projectsData: Project[] = [
   },
 
   {
+    id: 12,
+    title: "NexVision Payroll – Enterprise HR & Payroll Platform",
+    description: "An enterprise-grade payroll and HR management platform built with Next.js 14 and Supabase, featuring NFC-based attendance, semi-monthly payroll processing, and multi-role portals for Admin, Employee, and Intern users.",
+    fullDescription: "NexVision Payroll is a full-featured payroll management system built with Next.js 14 and Supabase, designed specifically for Philippine companies. It supports three user roles — Admin, Employee, and Intern — with comprehensive attendance tracking via NFC cards, leave/absence management, semi-monthly payroll processing, and digital payslip generation with e-signature capabilities. <br><br> The Admin Portal includes 17+ pages covering dashboard KPIs, employee and intern management, attendance tracking with NFC analytics, leave/OT/WFH request approvals, payroll runs with automated salary computation, payslip generation with email delivery, audit logs, and report generation. <br><br> The Employee Portal provides self-service features including real-time clock in/out, leave and overtime requests, digital payslip viewing with e-signature, and a holiday calendar. The Intern Portal tracks internship hours toward a 500-hour target with allowance-based payslip generation. <br><br> The NFC Attendance Kiosk enables card-based clock in/out with visual and audio feedback, a 5-second cooldown to prevent duplicate scans, and a full audit trail. The payroll engine handles semi-monthly processing with configurable pay fraction rules, automatic lunch deduction, overtime calculation, and a complete payslip workflow from creation to digital signature. <br><br> Built with Next.js 14 App Router, TypeScript, Tailwind CSS, shadcn/ui, Supabase (PostgreSQL with Row-Level Security), Recharts, Framer Motion, jsPDF, and Nodemailer. Tested with Jest, React Testing Library, and Playwright E2E tests. Deployed on Vercel.",
+    images: [
+      "/images/nexvision-payroll/nexvision-payroll-1.png",
+      "/images/nexvision-payroll/nexvision-payroll-2.png",
+      "/images/nexvision-payroll/nexvision-payroll-3.png",
+      "/images/nexvision-payroll/nexvision-payroll-4.png",
+      "/images/nexvision-payroll/nexvision-payroll-5.png",
+      "/images/nexvision-payroll/nexvision-payroll-6.png",
+      "/images/nexvision-payroll/nexvision-payroll-7.png"
+    ],
+    technologies: ["Next.js 14", "TypeScript", "Supabase", "Tailwind CSS", "shadcn/ui", "Framer Motion", "Recharts", "Vercel"],
+    type: "Contributed",
+    role: "Full Stack Developer",
+    duration: "4 months",
+    liveLink: "https://payroll.nexvision.info/",
+    githubLink: "#"
+  },
+
+  {
     id: 8,
     title: "Personal Money Management System",
     description: "The system allows users to manage their savings, monitor income and expenses, and view transaction history in an intuitive and user-friendly interface.",
@@ -205,28 +227,6 @@ export const projectsData: Project[] = [
     role: "Full Stack Developer",
     duration: "3 months",
     liveLink: "https://mojde.beauty/",
-    githubLink: "#"
-  },
-
-  {
-    id: 12,
-    title: "NexVision Payroll – Enterprise HR & Payroll Platform",
-    description: "An enterprise-grade payroll and HR management platform built with Next.js 14 and Supabase, featuring NFC-based attendance, semi-monthly payroll processing, and multi-role portals for Admin, Employee, and Intern users.",
-    fullDescription: "NexVision Payroll is a full-featured payroll management system built with Next.js 14 and Supabase, designed specifically for Philippine companies. It supports three user roles — Admin, Employee, and Intern — with comprehensive attendance tracking via NFC cards, leave/absence management, semi-monthly payroll processing, and digital payslip generation with e-signature capabilities. <br><br> The Admin Portal includes 17+ pages covering dashboard KPIs, employee and intern management, attendance tracking with NFC analytics, leave/OT/WFH request approvals, payroll runs with automated salary computation, payslip generation with email delivery, audit logs, and report generation. <br><br> The Employee Portal provides self-service features including real-time clock in/out, leave and overtime requests, digital payslip viewing with e-signature, and a holiday calendar. The Intern Portal tracks internship hours toward a 500-hour target with allowance-based payslip generation. <br><br> The NFC Attendance Kiosk enables card-based clock in/out with visual and audio feedback, a 5-second cooldown to prevent duplicate scans, and a full audit trail. The payroll engine handles semi-monthly processing with configurable pay fraction rules, automatic lunch deduction, overtime calculation, and a complete payslip workflow from creation to digital signature. <br><br> Built with Next.js 14 App Router, TypeScript, Tailwind CSS, shadcn/ui, Supabase (PostgreSQL with Row-Level Security), Recharts, Framer Motion, jsPDF, and Nodemailer. Tested with Jest, React Testing Library, and Playwright E2E tests. Deployed on Vercel.",
-    images: [
-      "/images/nexvision-payroll/nexvision-payroll-1.png",
-      "/images/nexvision-payroll/nexvision-payroll-2.png",
-      "/images/nexvision-payroll/nexvision-payroll-3.png",
-      "/images/nexvision-payroll/nexvision-payroll-4.png",
-      "/images/nexvision-payroll/nexvision-payroll-5.png",
-      "/images/nexvision-payroll/nexvision-payroll-6.png",
-      "/images/nexvision-payroll/nexvision-payroll-7.png"
-    ],
-    technologies: ["Next.js 14", "TypeScript", "Supabase", "Tailwind CSS", "shadcn/ui", "Framer Motion", "Recharts", "Vercel"],
-    type: "Contributed",
-    role: "Full Stack Developer",
-    duration: "4 months",
-    liveLink: "https://payroll.nexvision.info/",
     githubLink: "#"
   },
 
