@@ -36,8 +36,89 @@ const certificationsData: Certification[] = [
         issuer: "IBM (via Coursera)",
         date: "February 2026",
         credentialId: "MRGOJ4731FZS",
-        credentialUrl: "https://coursera.org/verify/professional-cert/MRGOJ4731FZS",
+        credentialUrl: "https://www.coursera.org/account/accomplishments/specialization/MRGQI4731FZS",
         skills: ["DevOps", "CI/CD", "Docker", "Kubernetes", "OpenShift", "Microservices", "Agile", "Scrum", "Python", "Linux", "Shell Scripting", "GitHub Actions", "Serverless", "Test-Driven Development"]
+    },
+    {
+        id: 4,
+        title: "Python Project for AI & Application Development",
+        issuer: "IBM (via Credly)",
+        date: "January 2026",
+        credentialId: "416e5250-7308-43f0-9c05-adc4799ddad3",
+        credentialUrl: "https://www.credly.com/badges/416e5250-7308-43f0-9c05-adc4799ddad3/linked_in_profile",
+        skills: ["Python", "AI", "Flask", "Application Development", "API Integration"]
+    },
+    {
+        id: 5,
+        title: "Academy Accreditation - Generative AI Fundamentals",
+        issuer: "Databricks",
+        date: "January 2026",
+        credentialId: "9cc6ab2f-9b40-4533-be86-02ea186951a2",
+        credentialUrl: "https://credentials.databricks.com/9cc6ab2f-9b40-4533-be86-02ea186951a2",
+        skills: ["Generative AI", "LLMs", "Databricks", "AI Fundamentals"]
+    },
+    {
+        id: 6,
+        title: "Digital Transformation with Google Cloud",
+        issuer: "Google Cloud Skills",
+        date: "January 2026",
+        credentialId: "21373471",
+        credentialUrl: "https://www.skills.google/public_profiles/13ea0262-a6cb-4d64-8636-831782aef8ad/badges/21373471",
+        skills: ["Google Cloud", "Digital Transformation", "Cloud Strategy"]
+    },
+    {
+        id: 7,
+        title: "Machine Learning Operations (MLOps) for Generative AI",
+        issuer: "Google Cloud Skills",
+        date: "December 2025",
+        credentialId: "21107438",
+        credentialUrl: "https://www.skills.google/public_profiles/13ea0262-a6cb-4d64-8636-831782aef8ad/badges/21107438",
+        skills: ["MLOps", "Generative AI", "Google Cloud", "Machine Learning"]
+    },
+    {
+        id: 8,
+        title: "Responsible AI: Applying AI Principles with Google Cloud",
+        issuer: "Google Cloud Skills",
+        date: "December 2025",
+        credentialId: "21107226",
+        credentialUrl: "https://www.skills.google/public_profiles/13ea0262-a6cb-4d64-8636-831782aef8ad/badges/21107226",
+        skills: ["Responsible AI", "AI Ethics", "Google Cloud"]
+    },
+    {
+        id: 9,
+        title: "Prompt Design in Vertex AI",
+        issuer: "Google Cloud Skills",
+        date: "December 2025",
+        credentialId: "21104933",
+        credentialUrl: "https://www.skills.google/public_profiles/13ea0262-a6cb-4d64-8636-831782aef8ad/badges/21104933",
+        skills: ["Prompt Engineering", "Vertex AI", "Google Cloud", "Generative AI"]
+    },
+    {
+        id: 10,
+        title: "Introduction to Responsible AI",
+        issuer: "Google Cloud Skills",
+        date: "December 2025",
+        credentialId: "21077208",
+        credentialUrl: "https://www.skills.google/public_profiles/13ea0262-a6cb-4d64-8636-831782aef8ad/badges/21077208",
+        skills: ["Responsible AI", "AI Ethics", "Google Cloud"]
+    },
+    {
+        id: 11,
+        title: "Introduction to Generative AI",
+        issuer: "Google Cloud Skills",
+        date: "December 2025",
+        credentialId: "21077194",
+        credentialUrl: "https://www.skills.google/public_profiles/13ea0262-a6cb-4d64-8636-831782aef8ad/badges/21077194",
+        skills: ["Generative AI", "LLMs", "Google Cloud"]
+    },
+    {
+        id: 12,
+        title: "Introduction to Large Language Models",
+        issuer: "Google Cloud Skills",
+        date: "December 2025",
+        credentialId: "21077163",
+        credentialUrl: "https://www.skills.google/public_profiles/13ea0262-a6cb-4d64-8636-831782aef8ad/badges/21077163",
+        skills: ["LLMs", "NLP", "Google Cloud", "Generative AI"]
     }
 ];
 

@@ -190,10 +190,16 @@ export const projectsData: Project[] = [
 
   {
     id: 11,
-    title: "Mojde Beauty – E-Commerce & Beauty Platform",
-    description: "Mojde Beauty is a modern e-commerce platform designed for the beauty industry, featuring product catalogs, online ordering, and a sleek user interface tailored for beauty brands and retailers.",
-    fullDescription: "Mojde Beauty is a modern e-commerce platform built for the beauty industry, featuring a fully responsive product catalog, streamlined online ordering experience, and elegant UI/UX design. The platform enables beauty brands and retailers to showcase their products with rich media, manage inventory, and process customer orders efficiently. <br><br> The website incorporates modern web technologies with a focus on performance, SEO optimization, and mobile-first design. Key features include dynamic product filtering, secure checkout flow, customer account management, and an admin dashboard for managing products and orders. <br><br> The project demonstrates expertise in full-stack web development, e-commerce integrations, and creating conversion-optimized digital storefronts for the beauty and wellness industry.",
-    images: [],
+    title: "Mojdé Beauty – PMU Training & E-Commerce Platform",
+    description: "Mojdé Beauty is a professional beauty platform for PhiAcademy-certified permanent makeup training, beauty services, e-commerce product sales, and online appointment booking.",
+    fullDescription: "Mojdé Beauty is a professional beauty and training platform built for Mojdé Marivani, a PhiAcademy-certified permanent makeup artist in the Philippines. The website serves as a comprehensive digital presence featuring PhiAcademy training programs (Phibrows, Phibright, Shadowbrows), beauty services (permanent makeup, skin care, hair growth, diode laser), an e-commerce bookshop with WooCommerce integration, and a blog section. <br><br> Key features include a dynamic appointment booking system with service/training selection, date/time picker, and form validation. The site showcases training catalogs with detailed course descriptions, a services page with categorized offerings, and a fully functional online store for training manuals and educational products. <br><br> The platform is built on WordPress with Elementor for page building, WooCommerce for e-commerce, and custom PHP for backend logic. The design follows a sophisticated navy and gold color scheme with mobile-first responsive layouts, optimized for SEO and performance. The project demonstrates expertise in CMS customization, e-commerce integration, booking systems, and creating conversion-focused websites for the beauty and wellness industry.",
+    images: [
+      "/images/mojde-beauty/mojde-beauty-1.png",
+      "/images/mojde-beauty/mojde-beauty-2.png",
+      "/images/mojde-beauty/mojde-beauty-3.png",
+      "/images/mojde-beauty/mojde-beauty-4.png",
+      "/images/mojde-beauty/mojde-beauty-5.png"
+    ],
     technologies: ["WordPress", "Elementor", "WooCommerce", "PHP", "CSS3", "JavaScript"],
     type: "Contributed",
     role: "Full Stack Developer",
@@ -204,11 +210,19 @@ export const projectsData: Project[] = [
 
   {
     id: 12,
-    title: "NexVision Payroll Management System",
-    description: "A comprehensive payroll management system designed to streamline employee salary processing, attendance tracking, tax computation, and payroll reporting for businesses.",
-    fullDescription: "NexVision Payroll is a comprehensive payroll management system designed to streamline employee salary processing, attendance tracking, tax computation, and payroll reporting for businesses of all sizes. The platform provides HR departments and administrators with an efficient, accurate, and secure way to manage payroll operations. <br><br> Key features include automated salary computation, deductions management, employee records, time and attendance integration, tax withholding calculations, payslip generation, and detailed payroll reports. The system supports role-based access control to ensure data security and compliance with labor regulations. <br><br> The project showcases expertise in building enterprise-level web applications with robust backend logic, database management, and user-friendly administrative interfaces designed for real-world business operations.",
-    images: [],
-    technologies: ["PHP", "MySQL", "JavaScript", "Bootstrap", "CSS3", "HTML5"],
+    title: "NexVision Payroll – Enterprise HR & Payroll Platform",
+    description: "An enterprise-grade payroll and HR management platform built with Next.js 14 and Supabase, featuring NFC-based attendance, semi-monthly payroll processing, and multi-role portals for Admin, Employee, and Intern users.",
+    fullDescription: "NexVision Payroll is a full-featured payroll management system built with Next.js 14 and Supabase, designed specifically for Philippine companies. It supports three user roles — Admin, Employee, and Intern — with comprehensive attendance tracking via NFC cards, leave/absence management, semi-monthly payroll processing, and digital payslip generation with e-signature capabilities. <br><br> The Admin Portal includes 17+ pages covering dashboard KPIs, employee and intern management, attendance tracking with NFC analytics, leave/OT/WFH request approvals, payroll runs with automated salary computation, payslip generation with email delivery, audit logs, and report generation. <br><br> The Employee Portal provides self-service features including real-time clock in/out, leave and overtime requests, digital payslip viewing with e-signature, and a holiday calendar. The Intern Portal tracks internship hours toward a 500-hour target with allowance-based payslip generation. <br><br> The NFC Attendance Kiosk enables card-based clock in/out with visual and audio feedback, a 5-second cooldown to prevent duplicate scans, and a full audit trail. The payroll engine handles semi-monthly processing with configurable pay fraction rules, automatic lunch deduction, overtime calculation, and a complete payslip workflow from creation to digital signature. <br><br> Built with Next.js 14 App Router, TypeScript, Tailwind CSS, shadcn/ui, Supabase (PostgreSQL with Row-Level Security), Recharts, Framer Motion, jsPDF, and Nodemailer. Tested with Jest, React Testing Library, and Playwright E2E tests. Deployed on Vercel.",
+    images: [
+      "/images/nexvision-payroll/nexvision-payroll-1.png",
+      "/images/nexvision-payroll/nexvision-payroll-2.png",
+      "/images/nexvision-payroll/nexvision-payroll-3.png",
+      "/images/nexvision-payroll/nexvision-payroll-4.png",
+      "/images/nexvision-payroll/nexvision-payroll-5.png",
+      "/images/nexvision-payroll/nexvision-payroll-6.png",
+      "/images/nexvision-payroll/nexvision-payroll-7.png"
+    ],
+    technologies: ["Next.js 14", "TypeScript", "Supabase", "Tailwind CSS", "shadcn/ui", "Framer Motion", "Recharts", "Vercel"],
     type: "Contributed",
     role: "Full Stack Developer",
     duration: "4 months",

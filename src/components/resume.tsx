@@ -142,23 +142,7 @@ const Resume: React.FC = () => {
                             <p className="text-blue-600 font-medium mb-2">The National Teachers College</p>
                         </div>
 
-                        {/* Junior High School */}
-                         <div className="space-y-2 bg-white shadow-lg rounded-md p-6">
-                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                                <h4 className="text-xl font-semibold text-gray-900">Junior High School</h4>
-                                <span className="text-sm text-gray-500 mt-1 sm:mt-0">2014 - 2018</span>
-                            </div>
-                            <p className="text-blue-600 font-medium mb-2">Antonio A. Maceda Integrated School</p>
-                        </div>
 
-                        {/* Elementary */}
-                         <div className="space-y-2 bg-white shadow-lg rounded-md p-6">
-                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                                <h4 className="text-xl font-semibold text-gray-900">Elementary Education</h4>
-                                <span className="text-sm text-gray-500 mt-1 sm:mt-0">2006 - 2012</span>
-                            </div>
-                            <p className="text-blue-600 font-medium mb-2">Padre Burgos Elementary School</p>
-                        </div>
                     </div>
                 </div>
 
@@ -228,8 +212,36 @@ const Resume: React.FC = () => {
                                 <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">Unity</span>
                                 <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">Machine Learning</span>
                                 <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">SEO</span>
-                                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">aaPanel</span>
-                                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">GreenGeeks</span>
+                            </div>
+                        </div>
+
+                        {/* DevOps & Infrastructure */}
+                        <div className="space-y-2 bg-white shadow-lg rounded-md p-6 md:col-span-2">
+                            <h4 className="text-lg font-semibold text-gray-900 mb-4">DevOps & Infrastructure</h4>
+                            <div className="flex flex-wrap gap-2">
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Linux</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">VPS Hosting</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Contabo</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">GreenGeeks</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">aaPanel</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Nginx</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">MariaDB</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">PHP-FPM</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">cPanel</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">phpMyAdmin</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">GitHub Actions</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">CI/CD</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">UFW</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Fail2Ban</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">SSH</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Cron</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Postfix</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Dovecot</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Rspamd</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">DNS Management</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">SSL</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Backup Automation</span>
+                                <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Server Security Hardening</span>
                             </div>
                         </div>
                     </div>
