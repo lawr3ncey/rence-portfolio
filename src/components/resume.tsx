@@ -89,7 +89,18 @@ const Resume: React.FC = () => {
                                 <li>Mentored junior developers and conducted code reviews</li>
                                 <li>Supported WordPress-based projects through custom theme development and feature enhancements</li>
                                 <li>Assisted in testing, debugging, and maintaining production websites</li>
+                            </ul>
 
+                            <p className="text-gray-700 font-semibold text-sm mt-4 mb-2">DevOps & Infrastructure</p>
+                            <ul className="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                                <li>Provisioned and managed Linux-based VPS servers on Contabo and GreenGeeks for hosting production applications</li>
+                                <li>Configured and maintained web server stacks using aaPanel, Nginx, MariaDB, and PHP-FPM</li>
+                                <li>Managed hosting environments via cPanel and phpMyAdmin for WordPress and PHP-based projects</li>
+                                <li>Built CI/CD pipelines using GitHub Actions for automated testing, builds, and deployments</li>
+                                <li>Implemented server security hardening with UFW firewall rules, Fail2Ban intrusion prevention, and secure SSH configurations</li>
+                                <li>Set up and maintained mail server infrastructure using Postfix, Dovecot, and Rspamd for spam filtering</li>
+                                <li>Managed DNS records, SSL certificate provisioning, and domain configurations</li>
+                                <li>Automated server backups and scheduled maintenance tasks using Cron jobs</li>
                             </ul>
                         </div>
 

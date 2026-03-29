@@ -65,16 +65,18 @@ const Hero: React.FC = () => {
           </div>
 
           <p className="text-gray-600 text-sm leading-relaxed">
-            I am a Microsoft Certified Full Stack Developer who builds responsive and user-friendly web applications 
-            using modern technologies including React, TypeScript, Node.js, and more. I also have experience developing 
-            applications using Unity and React Native. I focus on clean design, accessibility, and performance, and I 
-            enjoy turning ideas into functional, well-structured solutions.
+            I am a Microsoft Certified Full Stack Developer with hands-on DevOps experience, building responsive
+            and user-friendly web applications using React, TypeScript, Node.js, and more. Beyond development,
+            I manage Linux-based server infrastructure, CI/CD pipelines, and production deployments. I also have
+            experience developing applications using Unity and React Native. I focus on clean design, accessibility,
+            performance, and reliable infrastructure.
             <br></br>
             <br></br>
-            With my Microsoft Full Stack Developer Professional Certificate, I bring expertise in both frontend and 
-            backend development. I value collaboration and user-centered design, and my background in Computer Science 
-            allows me to build full-stack systems that balance functionality, performance, and usability. 
-            I’m continuously learning and currently exploring AI integration and emerging technologies 
+            With my Microsoft Full Stack Developer Professional Certificate, I bring expertise in frontend development,
+            backend systems, and DevOps infrastructure — from writing code to deploying and maintaining it in production.
+            I value collaboration and user-centered design, and my background in Computer Science allows me to build
+            full-stack systems that balance functionality, performance, and usability.
+            I’m continuously learning and currently exploring AI integration and emerging technologies
             to create smarter and more innovative digital experiences.
           </p>
         </div>
