@@ -189,6 +189,34 @@ export const projectsData: Project[] = [
   },
 
   {
+    id: 11,
+    title: "Mojde Beauty – E-Commerce & Beauty Platform",
+    description: "Mojde Beauty is a modern e-commerce platform designed for the beauty industry, featuring product catalogs, online ordering, and a sleek user interface tailored for beauty brands and retailers.",
+    fullDescription: "Mojde Beauty is a modern e-commerce platform built for the beauty industry, featuring a fully responsive product catalog, streamlined online ordering experience, and elegant UI/UX design. The platform enables beauty brands and retailers to showcase their products with rich media, manage inventory, and process customer orders efficiently. <br><br> The website incorporates modern web technologies with a focus on performance, SEO optimization, and mobile-first design. Key features include dynamic product filtering, secure checkout flow, customer account management, and an admin dashboard for managing products and orders. <br><br> The project demonstrates expertise in full-stack web development, e-commerce integrations, and creating conversion-optimized digital storefronts for the beauty and wellness industry.",
+    images: [],
+    technologies: ["WordPress", "Elementor", "WooCommerce", "PHP", "CSS3", "JavaScript"],
+    type: "Contributed",
+    role: "Full Stack Developer",
+    duration: "3 months",
+    liveLink: "https://mojde.beauty/",
+    githubLink: "#"
+  },
+
+  {
+    id: 12,
+    title: "NexVision Payroll Management System",
+    description: "A comprehensive payroll management system designed to streamline employee salary processing, attendance tracking, tax computation, and payroll reporting for businesses.",
+    fullDescription: "NexVision Payroll is a comprehensive payroll management system designed to streamline employee salary processing, attendance tracking, tax computation, and payroll reporting for businesses of all sizes. The platform provides HR departments and administrators with an efficient, accurate, and secure way to manage payroll operations. <br><br> Key features include automated salary computation, deductions management, employee records, time and attendance integration, tax withholding calculations, payslip generation, and detailed payroll reports. The system supports role-based access control to ensure data security and compliance with labor regulations. <br><br> The project showcases expertise in building enterprise-level web applications with robust backend logic, database management, and user-friendly administrative interfaces designed for real-world business operations.",
+    images: [],
+    technologies: ["PHP", "MySQL", "JavaScript", "Bootstrap", "CSS3", "HTML5"],
+    type: "Contributed",
+    role: "Full Stack Developer",
+    duration: "4 months",
+    liveLink: "https://payroll.nexvision.info/",
+    githubLink: "#"
+  },
+
+  {
     id: 2,
     title: "Alpha Premier Group Website",
     description: "A corporate website and internal system developed during my internship program. The project was built using Vanilla (HTML, CSS, JavaScript), PHP, and MySQL, focusing on performance, data handling, and backend logic.",

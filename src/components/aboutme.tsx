@@ -193,6 +193,38 @@ const Aboutme: React.FC = () => {
               </div>
 
             </div>
+
+            {/* Tech Stack from Work Experience */}
+            <div 
+              ref={(el) => { blockRefs.current[4] = el; }}
+              className={`mt-8 bg-white shadow-lg rounded-md p-6 transition-all duration-1000 ${
+                blocksVisible.has(4) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: '500ms' }}
+            >
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Tech Stack & Tools
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                Technologies and tools I use in professional work, from server administration to deployment pipelines.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Linux", "VPS Hosting", "Contabo", "GreenGeeks", "aaPanel", "Nginx", "MariaDB", "MySQL",
+                  "PHP-FPM", "WordPress", "Elementor", "cPanel", "phpMyAdmin", "GitHub Actions", "Vercel",
+                  "UFW", "Fail2Ban", "SSH", "Cron", "Postfix", "Dovecot", "Rspamd",
+                  "DNS Management", "SSL", "CI/CD", "Backup Automation", "Server Security Hardening"
+                ].map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full border border-blue-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
           </div>
 
           {/* Right Column - Animated Image Gallery */}

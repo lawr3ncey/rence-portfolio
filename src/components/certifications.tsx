@@ -29,6 +29,15 @@ const certificationsData: Certification[] = [
         credentialId: "lawrence_babelonia/machine-learning-with-python-v7",
         credentialUrl: "https://www.freecodecamp.org/certification/lawrence_babelonia/machine-learning-with-python-v7",
         skills: ["Python", "Machine Learning", "TensorFlow", "Neural Networks", "Data Science", "NumPy", "Pandas"]
+    },
+    {
+        id: 3,
+        title: "IBM DevOps and Software Engineering",
+        issuer: "IBM (via Coursera)",
+        date: "February 2026",
+        credentialId: "MRGOJ4731FZS",
+        credentialUrl: "https://coursera.org/verify/professional-cert/MRGOJ4731FZS",
+        skills: ["DevOps", "CI/CD", "Docker", "Kubernetes", "OpenShift", "Microservices", "Agile", "Scrum", "Python", "Linux", "Shell Scripting", "GitHub Actions", "Serverless", "Test-Driven Development"]
     }
 ];
 
