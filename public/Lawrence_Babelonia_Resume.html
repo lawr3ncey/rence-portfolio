@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawrence Babelonia - Resume</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.4in 0.5in;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 9.5pt;
+            line-height: 1.25;
+            color: #000;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.4in 0.5in;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 4pt;
+        }
+
+        .header h1 {
+            font-size: 16pt;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 2pt;
+        }
+
+        .header .contact {
+            font-size: 9pt;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1.5px solid #000;
+            margin: 4pt 0;
+        }
+
+        /* Section titles */
+        .section-title {
+            font-size: 10pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid #000;
+            padding-bottom: 1pt;
+            margin-top: 5pt;
+            margin-bottom: 3pt;
+        }
+
+        /* Entry block */
+        .entry {
+            margin-bottom: 4pt;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .entry-header .left {
+            font-weight: bold;
+        }
+
+        .entry-header .right {
+            font-style: italic;
+            font-size: 9pt;
+            white-space: nowrap;
+        }
+
+        .entry-sub {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .entry-sub .left {
+            font-style: italic;
+        }
+
+        .entry-sub .right {
+            font-size: 9pt;
+        }
+
+        /* Bullet lists */
+        ul {
+            margin-left: 14pt;
+            margin-top: 1pt;
+        }
+
+        ul li {
+            margin-bottom: 0pt;
+        }
+
+        /* Skills */
+        .skills-line {
+            margin-bottom: 0.5pt;
+        }
+
+        .skills-line strong {
+            font-weight: bold;
+        }
+
+        /* Certifications compact */
+        .cert-list {
+            margin-top: 1pt;
+        }
+
+        .cert-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .cert-item .right {
+            font-size: 9pt;
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>LAWRENCE P. BABELONIA</h1>
+        <div class="contact">
+            Manila, Philippines &bull; +63 993 326 8212 &bull; babelonialawrence@gmail.com &bull; github.com/lawr3ncey &bull; devrence.com
+        </div>
+    </div>
+    <hr class="divider">
+
+    <!-- EDUCATION -->
+    <div class="section-title">Education</div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span class="left">Eulogio &ldquo;Amang&rdquo; Rodriguez Institute of Science and Technology</span>
+            <span class="right">Manila, Philippines</span>
+        </div>
+        <div class="entry-sub">
+            <span class="left">Bachelor of Science in Computer Science</span>
+            <span class="right">2021 &ndash; 2025</span>
+        </div>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span class="left">The National Teachers College</span>
+            <span class="right">Manila, Philippines</span>
+        </div>
+        <div class="entry-sub">
+            <span class="left">Senior High School &ndash; ICT Strand</span>
+            <span class="right">2018 &ndash; 2020</span>
+        </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section-title">Experience</div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span class="left">Nexvision Innovations Inc.</span>
+            <span class="right">BGC, Philippines</span>
+        </div>
+        <div class="entry-sub">
+            <span class="left">Full-Stack Software Developer</span>
+            <span class="right">Sep 2025 &ndash; Present</span>
+        </div>
+        <ul>
+            <li>Spearheaded development of 8+ client-facing web applications using React, TypeScript, and Tailwind CSS, reducing delivery timelines by 30%</li>
+            <li>Architected an enterprise payroll platform (Next.js 14, Supabase) with NFC attendance, semi-monthly payroll automation, and 3 role-based portals serving 50+ employees</li>
+            <li>Provisioned and managed Linux VPS infrastructure (Contabo, GreenGeeks); configured Nginx, MariaDB, and automated CI/CD pipelines via GitHub Actions</li>
+            <li>Hardened server security (UFW, Fail2Ban, SSH), deployed mail infrastructure (Postfix, Dovecot, Rspamd), and managed SSL/DNS for 8+ domains</li>
+            <li>Mentored 7 junior developers through code reviews and pair programming, improving team code quality and sprint velocity</li>
+            <li>Supported WordPress projects via custom theme development</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span class="left">Alpha Premier Group of Companies OPC</span>
+            <span class="right">Ortigas, Philippines</span>
+        </div>
+        <div class="entry-sub">
+            <span class="left">Junior Full-Stack Developer Intern</span>
+            <span class="right">Mar 2025 &ndash; Jun 2025</span>
+        </div>
+        <ul>
+            <li>Developed and shipped 3 client websites using HTML, CSS, JavaScript, PHP, and MySQL, each delivered ahead of deadline</li>
+            <li>Built backend systems for form handling, input validation, and MySQL database integration, reducing manual data entry by 40%</li>
+            <li>Implemented CRUD operations and server-side data processing for internal tools, streamlining content management workflows</li>
+        </ul>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section-title">Projects</div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span class="left">EARIST Cavite 3D Campus Guide</span>
+            <span class="right">Unity3D / C# / Google Cloud APIs</span>
+        </div>
+        <ul>
+            <li>Engineered an interactive 3D campus navigation system using A* algorithm for pathfinding and Ray-Casting algorithm for obstacle detection for real-time route computation</li>
+            <li>Integrated speech-to-text/text-to-speech voice assistance and custom NLP algorithm with 1,500+ phrase patterns for location detection</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span class="left">NexVision Payroll &ndash; Enterprise HR &amp; Payroll Platform</span>
+            <span class="right">Next.js 14 / TypeScript / Supabase</span>
+        </div>
+        <ul>
+            <li>Engineered a full-featured payroll system with NFC-based attendance tracking, automated semi-monthly payroll computation, automated email notifications for payroll events, and digital payslip generation with e-signatures</li>
+            <li>Built 17+ admin dashboard pages covering real-time KPIs, employee management, leave/OT approvals, audit logging, and PDF report generation</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span class="left">Personal Money Management System</span>
+            <span class="right">React.js / Node.js / Supabase</span>
+        </div>
+        <ul>
+            <li>Developed a full-stack finance tracker with savings jars, income/expense logging, transaction history, and an admin analytics dashboard</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span class="left">BeautyConnect &ndash; Booking &amp; Order Platform</span>
+            <span class="right">WordPress / PHP / JavaScript</span>
+        </div>
+        <ul>
+            <li>Delivered a custom WordPress booking system with structured multi-field intake forms and admin-side order processing workflow</li>
+        </ul>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="section-title">Certifications</div>
+
+    <div class="cert-list">
+        <div class="cert-item">
+            <span><strong>Microsoft Full-Stack Developer Professional Certificate</strong> &mdash; Microsoft (via Coursera)</span>
+            <span class="right">Jan 2026</span>
+        </div>
+        <div class="cert-item">
+            <span><strong>IBM DevOps and Software Engineering Professional Certificate</strong> &mdash; IBM (via Coursera)</span>
+            <span class="right">Feb 2026</span>
+        </div>
+        <div class="cert-item">
+            <span><strong>Machine Learning Operations (MLOps) for Generative AI</strong> &mdash; Google Cloud Skills</span>
+            <span class="right">Dec 2025</span>
+        </div>
+        <div class="cert-item">
+            <span><strong>Machine Learning with Python</strong> &mdash; freeCodeCamp</span>
+            <span class="right">Jan 2026</span>
+        </div>
+        <div class="cert-item">
+            <span><strong>Academy Accreditation - Generative AI Fundamentals</strong> &mdash; Databricks</span>
+            <span class="right">Jan 2026</span>
+        </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section-title">Technical Skills</div>
+
+    <div class="skills-line"><strong>Frontend:</strong> JavaScript, TypeScript, React.js, Next.js, Vite, React Native, HTML5, CSS3, Tailwind CSS, Material UI, Bootstrap</div>
+    <div class="skills-line"><strong>Backend:</strong> Node.js, Express.js, C#, PHP, Python; MySQL, MongoDB, Supabase, REST APIs</div>
+    <div class="skills-line"><strong>DevOps &amp; Cloud:</strong> Linux, Nginx, Docker, GitHub Actions, CI/CD, aaPanel, UFW, Fail2Ban, SSL/DNS, VPS (Contabo, GreenGeeks)</div>
+    <div class="skills-line"><strong>Tools:</strong> Git, Vercel, Netlify, WordPress, Elementor, Figma, Unity3D, Blender</div>
+    <div class="skills-line"><strong>Languages:</strong> English (Professional), Filipino (Native)</div>
+    <div class="skills-line"><strong>Interests:</strong> System design, UI/UX optimization, performance engineering, AI integration, scalable web platforms</div>
+</body>
+</html>

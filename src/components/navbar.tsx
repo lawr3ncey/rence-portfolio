@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
       <div className="flex justify-between items-center px-4 sm:px-8 md:px-12 lg:px-[72px] py-6">
         {/* Logo/Brand */}
         <h1 className="font-bold text-base sm:text-lg">
-          Lawrence Babelonia <span className="hidden sm:inline font-normal text-gray-500">/ Software Developer</span>
+          Lawrence Babelonia <span className="hidden sm:inline font-normal text-gray-500">/ Full Stack Developer</span>
         </h1>
 
         {/* Desktop Navigation - Hidden on mobile */}
