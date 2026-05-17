@@ -63,6 +63,28 @@ export const projectsData: Project[] = [
   },
 
   {
+    id: 13,
+    title: "KARTELLEM – Music Collective & Streetwear Brand Website",
+    description: "A full-featured website for KARTELLEM, a Manila-based underground hip-hop collective, featuring merchandise drops, a Spotify-integrated music section, concert event countdown, member roster, and brand story.",
+    fullDescription: "KARTELLEM is a Manila-based underground hip-hop collective — artists, MCs, producers, and creators united by street culture. This website serves as their complete digital home, covering merchandise, music, events, roster, and brand identity.<br><br> The site opens with a cinematic full-screen hero featuring the collective's group photo and a scrolling ticker marquee. The Latest Drops section showcases merchandise with vibrant color-coded product cards (snapbacks, tees, hoodies, cargo pants) styled for the streetwear market.<br><br> The Music section embeds the official Spotify artist page with a live player and links out to Spotify, YouTube, Apple Music, and TikTok platforms. An event section features a live countdown timer tied to a scheduled Manila concert at Araneta Coliseum, with venue details and a ticket CTA.<br><br> The Roster section profiles individual collective members (Jwuds, Oneen, Waian, Yorko, and others) with their roles (MC, Producer, DJ/Engineer, Designer). The Story section delivers the brand narrative — born from Manila's underground alleys, built for the streets — with a photo split-layout and stat counters.<br><br> The design language is raw and deliberate: full-black backgrounds, bold condensed typography, red accent color, graffiti-style logo, and monochrome photography — all reinforcing the collective's underground identity.",
+    images: [
+      "/images/kartellem-website/kartellem-website-2.png",
+      "/images/kartellem-website/kartellem-website-3.png",
+      "/images/kartellem-website/kartellem-website-7.png",
+      "/images/kartellem-website/kartellem-website-6.png",
+      "/images/kartellem-website/kartellem-website-4.png",
+      "/images/kartellem-website/kartellem-website-1.png",
+      "/images/kartellem-website/kartellem-website-5.png"
+    ],
+    technologies: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Framer Motion", "Vercel"],
+    type: "Owned",
+    role: "Full Stack Developer",
+    duration: "1 month",
+    liveLink: "https://kartellem.devrence.com/",
+    githubLink: "https://github.com/lawr3ncey/Kartellem-Website"
+  },
+
+  {
     id: 8,
     title: "Personal Money Management System",
     description: "The system allows users to manage their savings, monitor income and expenses, and view transaction history in an intuitive and user-friendly interface.",
