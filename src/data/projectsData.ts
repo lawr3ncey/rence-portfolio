@@ -63,6 +63,29 @@ export const projectsData: Project[] = [
   },
 
   {
+    id: 14,
+    title: "SDSI – Soren Data Solutions Inc. Company Website",
+    description: "A full corporate website for Soren Data Solutions Inc. (SDSI), a Philippine-based construction and ICT infrastructure company, built with WordPress, Elementor, and The Plus Addons — covering services, featured projects, partner logos, and a contact form.",
+    fullDescription: "Soren Data Solutions Inc. (SDSI) is a premier, full-service company based in the Philippines specializing in two core pillars: commercial fit-out construction and structured ICT infrastructure. Their enterprise clients include Appen Philippines, Fujifilm, Shell, Aboitiz Equity Ventures, DMCI Homes, and 100+ global partners.<br><br> The website was built on WordPress using Hello Elementor as the base theme, Elementor Pro for layout and page building, Pro Elements for extended widgets, and The Plus Addons for advanced visual effects and interactive components.<br><br> The site covers five main pages: Home — a dark hero section with circuit-board visual, service overview cards (Fit-Out, Network Infrastructure, OSP Fiber Optic, Data Center), and CTA; About Us — company mission, stats (15+ years, 98% satisfaction, 100+ partners), and a global partner logo wall featuring 30+ industry leaders; Services — detailed breakdown of Fit-Out Construction, Structured Cabling, OSP Fiber Optic, Cell Site Construction, Data Center Solutions, Security & Surveillance, and Electrical Distribution; Projects — featured project case studies with stats (5k+ sqm delivered, 1300+ workstations, 2 enterprise clients) including Appen Philippines (4,300 sqm, 1,300 workstations, CBC Asia Technozone, Bacoor Cavite) and Fujifilm W Building BGC (1,100 sqm, 120 workstations); Contact Us — company details, 24/7 support callout, and an embedded contact form.<br><br> Design follows a clean light/dark contrast approach: dark hero sections with glowing green accents, white interior pages with bold black typography and SDSI's signature green brand color throughout.",
+    images: [
+      "/images/sdsi-company/sdsi-company-5.png",
+      "/images/sdsi-company/sdsi-company-6.png",
+      "/images/sdsi-company/sdsi-company-4.png",
+      "/images/sdsi-company/sdsi-company-7.png",
+      "/images/sdsi-company/sdsi-company-1.png",
+      "/images/sdsi-company/sdsi-company-8.png",
+      "/images/sdsi-company/sdsi-company-3.png",
+      "/images/sdsi-company/sdsi-company-2.png"
+    ],
+    technologies: ["WordPress", "Elementor Pro", "Hello Elementor", "Pro Elements", "The Plus Addons", "CSS3"],
+    type: "Contributed",
+    role: "Full Stack Developer",
+    duration: "1 month",
+    liveLink: "https://sdsi.nexvision.info/",
+    githubLink: "#"
+  },
+
+  {
     id: 13,
     title: "KARTELLEM – Music Collective & Streetwear Brand Website",
     description: "A full-featured website for KARTELLEM, a Manila-based underground hip-hop collective, featuring merchandise drops, a Spotify-integrated music section, concert event countdown, member roster, and brand story.",
